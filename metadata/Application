@@ -1,0 +1,62 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Calendar",
+            "Event",
+            "Generic"
+        ],
+        "name": "HomeAccounting",
+        "stores": [
+            "Calendars",
+            "Events",
+            "Merchants",
+            "Items",
+            "Tags"
+        ],
+        "views": [
+            "Main",
+            "EditWindow",
+            "RowContainer",
+            "GridMenu"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.USE_NATIVE_JSON = true;",
+                    "",
+                    "gapi.load('auth', function() {",
+                    "    gapi.auth.authorize({",
+                    "        'client_id': '137779780771-bl0ae35ftcuvloajal02idrsgnost9i7.apps.googleusercontent.com',",
+                    "        'scope': 'https://www.googleapis.com/auth/calendar'",
+                    "    }, function() {",
+                    "        var params = gapi.auth.getToken();",
+                    "",
+                    "        Ext.data.StoreManager.get('Calendars').getProxy().extraParams.access_token = params.access_token;",
+                    "        Ext.data.StoreManager.get('Events').getProxy().extraParams.access_token = params.access_token;",
+                    "        Ext.ComponentQuery.query('#calendarId')[0].setValue(Ext.util.Cookies.get('calendarId'));",
+                    "    });",
+                    "});"
+                ]
+            },
+            "name": "launch",
+            "designerId": "303592fe-0558-426a-8bce-570a68c673d8"
+        }
+    ]
+}

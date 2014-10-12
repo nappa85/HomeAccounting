@@ -1,0 +1,514 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "main",
+        "designer|userClassName": "Main",
+        "layout": "fit"
+    },
+    "name": "MyViewport",
+    "designerId": "35f89fe7-9e64-4606-b8f7-dd58bf6016ca",
+    "viewControllerInstanceId": "07955996-00ff-4568-bf07-4084d02faac3",
+    "viewModelInstanceId": "ee577224-0f73-45cc-8cab-97bb8e2d95b9",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "hidden": null
+            },
+            "name": "MyTabPanel",
+            "designerId": "7af409fb-71f6-4417-863f-0c7a79ea4dea",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "96eba101-f126-4b16-92cd-0c61884913c3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoLoadOnValue": true,
+                                "displayField": "summary",
+                                "fieldLabel": "Calendar",
+                                "forceSelection": true,
+                                "itemId": "calendarId",
+                                "layout|flex": null,
+                                "name": null,
+                                "store": "Calendars",
+                                "value": null,
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox",
+                            "designerId": "38033e68-34c6-4538-9ea5-a74db3c9192c",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange",
+                                        "implHandler": [
+                                            "Ext.util.Cookies.set('calendarId', newValue);",
+                                            "var oEvents = Ext.data.StoreManager.get('Events');",
+                                            "oEvents.getProxy().url = 'https://www.googleapis.com/calendar/v3/calendars/' + newValue + '/events';",
+                                            "oEvents.load();"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onComboboxChange",
+                                    "designerId": "93f8e481-2871-4222-bc93-a159458d607a"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "store": "Events",
+                        "title": "Events"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "06f9d5ac-4f0d-4b24-ab1a-472092d32e42",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "92b3dcb2-c2e1-41ee-927b-29540e94d13e"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom"
+                            },
+                            "name": "MyToolbar1",
+                            "designerId": "c89cb7f5-fed9-4ed9-91e0-eb788e318910",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "text": "Add New"
+                                    },
+                                    "name": "MyButton",
+                                    "designerId": "ae09b60e-4e1c-4d5c-9e25-268836d82dc7",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "e"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId')[0].getValue())) {",
+                                                    "    Ext.create('HomeAccounting.view.EditWindow').loadRecord();",
+                                                    "}"
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "f3386bc3-8863-4a13-b350-9df3323b3cc6"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "merchant",
+                                "flex": 1,
+                                "text": "Merchant"
+                            },
+                            "name": "MyColumn4",
+                            "designerId": "21fe4f75-6efa-474c-b0be-5af424d50a52"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "date",
+                                "flex": 1,
+                                "text": "Date"
+                            },
+                            "name": "MyColumn",
+                            "designerId": "87e196c0-b3a8-4f1b-adcf-7847cca719e3"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "time",
+                                "flex": 1,
+                                "text": "Time"
+                            },
+                            "name": "MyColumn1",
+                            "designerId": "5b67d89b-22e1-4aa5-90fa-3355ed2f801d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "total",
+                                "flex": 1,
+                                "text": "Total"
+                            },
+                            "name": "MyNumberColumn",
+                            "designerId": "2261c47e-3b16-4c00-b7dd-192d6e324534"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridpanelItemDblClick",
+                                "implHandler": [
+                                    "Ext.create('HomeAccounting.view.EditWindow').loadRecord(record);"
+                                ],
+                                "name": "itemdblclick",
+                                "scope": "me"
+                            },
+                            "name": "onGridpanelItemDblClick",
+                            "designerId": "d7357ca0-c25a-401e-af55-804fc1a7072f"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridpanelItemContextMenu",
+                                "implHandler": [
+                                    "e.preventDefault();",
+                                    "Ext.create('HomeAccounting.view.GridMenu', {'record': record}).showAt(e.getXY());"
+                                ],
+                                "name": "itemcontextmenu",
+                                "scope": "me"
+                            },
+                            "name": "onGridpanelItemContextMenu",
+                            "designerId": "23598196-29a2-4102-be25-20163c77d4dc"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig1",
+                            "designerId": "2a667c98-db22-4c6e-9c3b-6d244c9fa816"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.PolarChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "colors": null,
+                        "store": "Items",
+                        "title": "Items"
+                    },
+                    "name": "MyPieChart",
+                    "designerId": "c50a8793-3faf-4465-83d0-f11bfcd04e46",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-pie-chart",
+                    "autoName": "MyPieChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.series.Pie",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": [
+                                    "{'field':'name','display':'rotate','contrast':true,'font':'12px Arial'}"
+                                ],
+                                "xField": "total"
+                            },
+                            "name": "MyPieSeries",
+                            "designerId": "d81a54e0-9207-4cb6-a568-206ac6f8736a"
+                        },
+                        {
+                            "type": "Ext.chart.interactions.Rotate",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyRotateInteraction",
+                            "designerId": "80e2465c-32d1-4570-86aa-a319cdc077d9"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig2",
+                            "designerId": "e7e013b7-f3e4-43cc-ab2f-170d9fb83e13"
+                        },
+                        {
+                            "type": "Ext.chart.Legend",
+                            "reference": {
+                                "name": "legend",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": "right",
+                                "itemSelector": null
+                            },
+                            "name": "MyLegend",
+                            "designerId": "db4e1942-6c51-43fa-bc97-d73e6d872791",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "docked",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.PolarChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "colors": null,
+                        "store": "Merchants",
+                        "title": "Merchants"
+                    },
+                    "name": "MyPieChart2",
+                    "designerId": "f45facde-2e0f-4b7c-82e4-d3b66a66670e",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-pie-chart",
+                    "autoName": "MyPieChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.series.Pie",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": [
+                                    "{'field':'name','display':'rotate','contrast':true,'font':'12px Arial'}"
+                                ],
+                                "xField": "total"
+                            },
+                            "name": "MyPieSeries",
+                            "designerId": "b9656443-a52f-4c16-ab4d-2a0784013c4e"
+                        },
+                        {
+                            "type": "Ext.chart.interactions.Rotate",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyRotateInteraction",
+                            "designerId": "dd29005a-b8b9-4a89-9749-1861e5dec585"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig2",
+                            "designerId": "bdc81eba-f616-4468-b5db-617435723a72"
+                        },
+                        {
+                            "type": "Ext.chart.Legend",
+                            "reference": {
+                                "name": "legend",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": "right",
+                                "itemSelector": null
+                            },
+                            "name": "MyLegend",
+                            "designerId": "275fff24-ec01-40f2-86ad-fd9295057522",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "docked",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.PolarChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "colors": null,
+                        "store": "Tags",
+                        "title": "Tags"
+                    },
+                    "name": "MyPieChart1",
+                    "designerId": "57e7cf9b-56d3-4d3e-8403-651429441708",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-pie-chart",
+                    "autoName": "MyPieChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.series.Pie",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": [
+                                    "{'field':'name','display':'rotate','contrast':true,'font':'12px Arial'}"
+                                ],
+                                "xField": "total"
+                            },
+                            "name": "MyPieSeries",
+                            "designerId": "14b419df-1b41-4a14-af2c-2e69b346cfeb"
+                        },
+                        {
+                            "type": "Ext.chart.interactions.Rotate",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyRotateInteraction",
+                            "designerId": "8b8319c0-b118-4172-a0ec-066b2e8b3807"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig2",
+                            "designerId": "62968330-2cf7-45b0-a232-1ee741ed516e"
+                        },
+                        {
+                            "type": "Ext.chart.Legend",
+                            "reference": {
+                                "name": "legend",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": "right",
+                                "itemSelector": null
+                            },
+                            "name": "MyLegend",
+                            "designerId": "7d0c718d-c7df-4888-aaf2-def4c6208c2e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "docked",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

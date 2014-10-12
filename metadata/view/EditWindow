@@ -1,0 +1,355 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "bodyPadding": 10,
+        "designer|userAlias": "editwindow",
+        "designer|userClassName": "EditWindow",
+        "height": null,
+        "layout": "anchor",
+        "maximized": true,
+        "modal": true,
+        "padding": null,
+        "title": "Add Event",
+        "width": null
+    },
+    "name": "MyWindow",
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "4ac40039-e2bf-47c3-954e-e3c412a37af1",
+    "viewControllerInstanceId": "26213f49-8fa5-48dc-a952-fa55d80c3fd8",
+    "viewModelInstanceId": "23e6f59b-3b98-43e7-9b4f-36474aad4610",
+    "cn": [
+        {
+            "type": "Ext.form.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": null,
+                "layout|anchor": null,
+                "name": "id"
+            },
+            "name": "MyHiddenField",
+            "designerId": "016e355f-756c-4d1b-b516-e0a53137ad59"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "allowOnlyWhitespace": false,
+                "displayField": null,
+                "fieldLabel": "Merchant",
+                "layout|anchor": "100%",
+                "name": "merchant",
+                "queryMode": "local",
+                "store": "Merchants",
+                "tabIndex": 1,
+                "typeAhead": true,
+                "valueField": null
+            },
+            "name": "MyComboBox1",
+            "designerId": "80140b13-a72c-408a-a4cb-b40f4b16c23a"
+        },
+        {
+            "type": "Ext.form.field.Date",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "allowOnlyWhitespace": false,
+                "fieldLabel": "Date",
+                "format": "Y-m-d",
+                "layout|anchor": "100%",
+                "name": "date",
+                "submitFormat": "Y-m-d",
+                "tabIndex": 2
+            },
+            "name": "MyDateField",
+            "designerId": "55f066bf-e98a-4618-bbc2-c99e9e57265d"
+        },
+        {
+            "type": "Ext.form.field.Time",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "allowOnlyWhitespace": false,
+                "fieldLabel": "Time",
+                "format": "H:i:s",
+                "layout|anchor": "100%",
+                "name": "time",
+                "submitFormat": "H:i:s",
+                "tabIndex": 3
+            },
+            "name": "MyTimeField",
+            "designerId": "b7282415-d21c-493f-906f-04b624dbd95c"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "tabIndex": null,
+                "title": "Rows"
+            },
+            "name": "MyFieldSet",
+            "designerId": "1e47a373-aaca-49d8-9b8d-72b9a11c77b8",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "rowcontainer",
+                    "designerId": "dfb6578e-8dc4-4c35-a236-4d9b641fd97a",
+                    "masterInstanceId": "8be3716c-9863-4074-8e20-868f503cfc6f"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFieldsetAdd",
+                        "implHandler": [
+                            "var aFields = Ext.ComponentQuery.query('field', container),",
+                            "    i = 0;",
+                            "",
+                            "for(; i < aFields.length; i++) {",
+                            "    aFields[i].tabIndex = 4 + i;",
+                            "}"
+                        ],
+                        "name": "add",
+                        "scope": "me"
+                    },
+                    "name": "onFieldsetAdd",
+                    "designerId": "79541394-ef49-4db8-910c-b403fbf3c922"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "end",
+                "designer|uiInterfaceName": "footer",
+                "dock": "bottom",
+                "ui": "footer"
+            },
+            "name": "MyToolbar2",
+            "designerId": "7571cbf5-8ac7-4b24-9654-0d9f9ae43e12"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "loadRecord",
+                "implHandler": [
+                    "var oFieldset = this.down('fieldset'),",
+                    "    oToolbar = this.down('toolbar'),",
+                    "    i = 0,",
+                    "    j = 0,",
+                    "    aRows;",
+                    "",
+                    "oFieldset.removeAll();",
+                    "",
+                    "if(!Ext.isEmpty(record)) {",
+                    "    this.setTitle(record.get('summary'));",
+                    "    this.down('field[name=id]').setValue(record.get('id'));",
+                    "    this.down('field[name=merchant]').setValue(record.get('merchant'));",
+                    "    this.down('field[name=date]').setValue(record.get('date'));",
+                    "    this.down('field[name=time]').setValue(record.get('time'));",
+                    "    aRows = record.get('rows');",
+                    "    for(; i < aRows.length; i++) {",
+                    "        oFieldset.add({xtype: 'rowcontainer'}).loadRecord(aRows[i]);",
+                    "    }",
+                    "    oToolbar.add({",
+                    "        xtype: 'button',",
+                    "        text: 'Save as New',",
+                    "        handler: function(button) {",
+                    "            this.down('field[name=id]').setValue('');",
+                    "            this.onSubmitClick(button);",
+                    "        },",
+                    "        scope: this",
+                    "    });",
+                    "}",
+                    "",
+                    "oFieldset.add(this.getNewRowObject());",
+                    "oToolbar.add({",
+                    "    xtype: 'button',",
+                    "    text: 'Save',",
+                    "    handler: this.onSubmitClick,",
+                    "    scope: this",
+                    "});"
+                ]
+            },
+            "name": "loadRecord",
+            "designerId": "61270312-88ec-46d8-a2d1-609052c09dc0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getNewRowObject",
+                "implHandler": [
+                    "return {",
+                    "        xtype: 'rowcontainer',",
+                    "        listeners: {",
+                    "            change: {",
+                    "                single: true,",
+                    "                fn: function() {",
+                    "                    this.down('fieldset').add(this.getNewRowObject());",
+                    "                },",
+                    "                scope: this",
+                    "            }",
+                    "        }",
+                    "    };"
+                ]
+            },
+            "name": "getNewRowObject",
+            "designerId": "2155029e-94cf-46dc-bc64-ea2ece107574"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button"
+                ],
+                "fn": "onSubmitClick",
+                "implHandler": [
+                    "var sCalendarId = Ext.ComponentQuery.query('#calendarId')[0].getValue(),",
+                    "    sId = this.down('field[name=id]').getValue(),",
+                    "    aRows = this.query('rowcontainer'),",
+                    "    oValue = {",
+                    "        merchant: this.down('field[name=merchant]').getSubmitValue(),",
+                    "        date: this.down('field[name=date]').getSubmitValue(),",
+                    "        time: this.down('field[name=time]').getSubmitValue(),",
+                    "        rows: [],",
+                    "        total: 0",
+                    "    },",
+                    "    i = 0,",
+                    "    oRow;",
+                    "",
+                    "for(; i < aRows.length; i++) {",
+                    "    oRow = aRows[i].getValues();",
+                    "    if(!Ext.isEmpty(oRow.item) && (oRow.price > 0)) {",
+                    "        oValue.rows.push(oRow);",
+                    "        oValue.total += oRow.number * oRow.price;",
+                    "    }",
+                    "}",
+                    "",
+                    "var xhr = new XMLHttpRequest();",
+                    "if(Ext.isEmpty(sId)) {",
+                    "    xhr.open('POST', 'https://www.googleapis.com/calendar/v3/calendars/' + sCalendarId + '/events');",
+                    "}",
+                    "else {",
+                    "    xhr.open('PUT', 'https://www.googleapis.com/calendar/v3/calendars/' + sCalendarId + '/events/' + sId);",
+                    "}",
+                    "var oauthToken = gapi.auth.getToken();",
+                    "xhr.setRequestHeader('Authorization', 'Bearer ' + oauthToken.access_token);",
+                    "xhr.setRequestHeader('Content-Type', 'application/json');",
+                    "xhr.onload = Ext.Function.bind(this.onEventCreate, this);",
+                    "xhr.send(Ext.JSON.encode({",
+                    "    end: {",
+                    "        dateTime: oValue.date + 'T' + oValue.time,",
+                    "        timeZone: 'Europe/Rome'",
+                    "    },",
+                    "    start: {",
+                    "        dateTime: oValue.date + 'T' + oValue.time,",
+                    "        timeZone: 'Europe/Rome'",
+                    "    },",
+                    "    description: Ext.JSON.encode(oValue),",
+                    "    summary: '[HomeAccounting] ' + oValue.merchant + ' ' + oValue.total",
+                    "}));",
+                    "    /*Ext.Ajax.request({",
+                    "        url: 'https://www.googleapis.com/calendar/v3/calendars/' + sCalendarId + '/events',",
+                    "        headers: {",
+                    "            'Authorization': 'Bearer ' + oauthToken.access_token,",
+                    "            'Content-Type': 'application/json'",
+                    "        },",
+                    "        method: 'POST',",
+                    "        jsonData: {",
+                    "            end: {",
+                    "                dateTime: oValue.date + 'T' + oValue.time",
+                    "            },",
+                    "            start: {",
+                    "                dateTime: oValue.date + 'T' + oValue.time",
+                    "            },",
+                    "            description: Ext.JSON.encode(oValue),",
+                    "            summary: '[HomeAccounting] ' + oValue.merchant + ' ' + oValue.total",
+                    "        },",
+                    "        success: function() { console.log('success', arguments); },",
+                    "        failure: function() { console.log('failure', arguments); console.trace(); }",
+                    "    });*/"
+                ]
+            },
+            "name": "onSubmitClick",
+            "designerId": "ed7a1488-0b78-4f40-8036-132d73ef6880"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEventCreate",
+                "implHandler": [
+                    "Ext.data.StoreManager.get('Events').load();",
+                    "this.close();"
+                ]
+            },
+            "name": "onEventCreate",
+            "designerId": "e8a0f166-3a5d-441a-954d-881a3c48140c"
+        }
+    ]
+}

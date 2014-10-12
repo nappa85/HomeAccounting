@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Generic"
+    },
+    "name": "Merchant1",
+    "designerId": "74806b0b-2479-4e3a-8327-5cf8e6c34a7e",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyString7",
+            "designerId": "77266b09-0ae2-4fc3-a015-ded2471b38b6"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "total"
+            },
+            "name": "MyNumber1",
+            "designerId": "e810177b-d27a-4cef-beeb-dfa1866c5f10"
+        }
+    ]
+}

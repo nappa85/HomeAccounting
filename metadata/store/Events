@@ -1,0 +1,80 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Events",
+        "model": "Event",
+        "storeId": "Events"
+    },
+    "name": "MyJsonPStore",
+    "designerId": "4a0cbe03-7d5c-458c-bc6b-bca9880c7116",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": [
+                    "{q:'[HomeAccounting]'}"
+                ]
+            },
+            "name": "MyJsonPProxy1",
+            "designerId": "0101375d-19a7-4cde-9779-aa612a6ba7a9",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "items"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "397fdb6f-6af0-488e-b15a-c7ab3e5b4b48"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreBeforeLoad",
+                "implHandler": [
+                    "Ext.data.StoreManager.get('Merchants').removeAll();",
+                    "Ext.data.StoreManager.get('Items').removeAll();",
+                    "Ext.data.StoreManager.get('Tags').removeAll();"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "name": "onJsonpstoreBeforeLoad",
+            "designerId": "8a89e10f-8a39-416d-a21d-15dee8e084f6"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "start"
+            },
+            "name": "MySorter",
+            "designerId": "e5631533-db94-4cdf-8a13-d65d4dffb442"
+        }
+    ]
+}

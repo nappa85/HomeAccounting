@@ -1,0 +1,15 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Merchants",
+        "model": "Generic",
+        "storeId": "Merchants"
+    },
+    "name": "MyArrayStore",
+    "designerId": "47b6dcb6-b2e3-4c38-b20f-eb5e892f906b"
+}

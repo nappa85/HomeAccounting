@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gridmenu",
+        "designer|userClassName": "GridMenuViewController"
+    },
+    "designerId": "9a5e18a8-af69-4d41-b4f9-698285aba932"
+}
