@@ -14,18 +14,18 @@
  */
 
 Ext.define('HomeAccounting.store.Tags', {
-    extend: 'Ext.data.Store',
+	extend: 'Ext.data.Store',
 
-    requires: [
-        'HomeAccounting.model.Generic'
-    ],
+	requires: [
+		'HomeAccounting.model.Generic'
+	],
 
-    constructor: function(cfg) {
-        var me = this;
-        cfg = cfg || {};
-        me.callParent([Ext.apply({
-            storeId: 'Tags',
-            model: 'HomeAccounting.model.Generic'
-        }, cfg)]);
-    }
+	constructor: function(cfg) {
+		var me = this;
+		cfg = cfg || {};
+		me.callParent([Ext.apply({
+			storeId: 'Tags',
+			model: 'HomeAccounting.model.Generic'
+		}, cfg)]);
+	}
 });

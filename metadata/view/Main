@@ -87,6 +87,55 @@
                                     "designerId": "93f8e481-2871-4222-bc93-a159458d607a"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "name": "MyFill",
+                            "designerId": "59fb2bed-72b2-426a-ae31-f1177e2017f4"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Start",
+                                "format": "c",
+                                "itemId": "startDate",
+                                "layout|flex": null,
+                                "name": "startDate",
+                                "submitFormat": "c"
+                            },
+                            "name": "MyDateField1",
+                            "designerId": "44358953-76cc-4563-ae98-19ccbc6a5757"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "End",
+                                "format": "c",
+                                "itemId": "endDate",
+                                "layout|flex": null,
+                                "name": "endDate",
+                                "submitFormat": "c"
+                            },
+                            "name": "MyDateField2",
+                            "designerId": "9788a1ab-bf97-484d-b714-ffec6972080f"
                         }
                     ]
                 },

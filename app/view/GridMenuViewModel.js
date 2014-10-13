@@ -14,7 +14,7 @@
  */
 
 Ext.define('HomeAccounting.view.GridMenuViewModel', {
-    extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.gridmenu'
+	extend: 'Ext.app.ViewModel',
+	alias: 'viewmodel.gridmenu'
 
 });

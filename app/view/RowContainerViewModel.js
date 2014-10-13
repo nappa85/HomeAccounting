@@ -14,7 +14,7 @@
  */
 
 Ext.define('HomeAccounting.view.RowContainerViewModel', {
-    extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.rowcontainer'
+	extend: 'Ext.app.ViewModel',
+	alias: 'viewmodel.rowcontainer'
 
 });

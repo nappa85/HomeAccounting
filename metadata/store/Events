@@ -53,6 +53,11 @@
             "userConfig": {
                 "fn": "onJsonpstoreBeforeLoad",
                 "implHandler": [
+                    "var oProxy = this.getProxy();",
+                    "",
+                    "oProxy.extraParams.timeMin = Ext.ComponentQuery.query('#startDate')[0].getSubmitValue();",
+                    "oProxy.extraParams.timeMax = Ext.ComponentQuery.query('#endDate')[0].getSubmitValue();",
+                    "",
                     "Ext.data.StoreManager.get('Merchants').removeAll();",
                     "Ext.data.StoreManager.get('Items').removeAll();",
                     "Ext.data.StoreManager.get('Tags').removeAll();"

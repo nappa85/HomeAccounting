@@ -20,42 +20,49 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
-    models: [
-        'Calendar',
-        'Event',
-        'Generic'
-    ],
-    stores: [
-        'Calendars',
-        'Events',
-        'Merchants',
-        'Items',
-        'Tags'
-    ],
-    views: [
-        'Main',
-        'EditWindow',
-        'RowContainer',
-        'GridMenu'
-    ],
-    name: 'HomeAccounting',
+	models: [
+		'Calendar',
+		'Event',
+		'Generic'
+	],
+	stores: [
+		'Calendars',
+		'Events',
+		'Merchants',
+		'Items',
+		'Tags'
+	],
+	views: [
+		'Main',
+		'EditWindow',
+		'RowContainer',
+		'GridMenu'
+	],
+	name: 'HomeAccounting',
 
-    launch: function() {
-        Ext.create('HomeAccounting.view.Main');
-        Ext.USE_NATIVE_JSON = true;
+	launch: function() {
+		Ext.create('HomeAccounting.view.Main');
+		var date = new Date(),
+			y = date.getFullYear(),
+			m = date.getMonth();
 
-        gapi.load('auth', function() {
-            gapi.auth.authorize({
-                'client_id': '137779780771-bl0ae35ftcuvloajal02idrsgnost9i7.apps.googleusercontent.com',
-                'scope': 'https://www.googleapis.com/auth/calendar'
-            }, function() {
-                var params = gapi.auth.getToken();
+		Ext.USE_NATIVE_JSON = true;
 
-                Ext.data.StoreManager.get('Calendars').getProxy().extraParams.access_token = params.access_token;
-                Ext.data.StoreManager.get('Events').getProxy().extraParams.access_token = params.access_token;
-                Ext.ComponentQuery.query('#calendarId')[0].setValue(Ext.util.Cookies.get('calendarId'));
-            });
-        });
-    }
+		Ext.ComponentQuery.query('#startDate')[0].setValue(new Date(y, m, 1));
+		Ext.ComponentQuery.query('#endDate')[0].setValue(new Date(y, m + 1, 0));
+
+		gapi.load('auth', function() {
+			gapi.auth.authorize({
+				'client_id': '137779780771-bl0ae35ftcuvloajal02idrsgnost9i7.apps.googleusercontent.com',
+				'scope': 'https://www.googleapis.com/auth/calendar'
+			}, function() {
+				var params = gapi.auth.getToken();
+
+				Ext.data.StoreManager.get('Calendars').getProxy().extraParams.access_token = params.access_token;
+				Ext.data.StoreManager.get('Events').getProxy().extraParams.access_token = params.access_token;
+				Ext.ComponentQuery.query('#calendarId')[0].setValue(Ext.util.Cookies.get('calendarId'));
+			});
+		});
+	}
 
 });

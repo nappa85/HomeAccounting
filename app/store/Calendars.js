@@ -14,28 +14,28 @@
  */
 
 Ext.define('HomeAccounting.store.Calendars', {
-    extend: 'Ext.data.Store',
+	extend: 'Ext.data.Store',
 
-    requires: [
-        'HomeAccounting.model.Calendar',
-        'Ext.data.proxy.JsonP',
-        'Ext.data.reader.Json'
-    ],
+	requires: [
+		'HomeAccounting.model.Calendar',
+		'Ext.data.proxy.JsonP',
+		'Ext.data.reader.Json'
+	],
 
-    constructor: function(cfg) {
-        var me = this;
-        cfg = cfg || {};
-        me.callParent([Ext.apply({
-            storeId: 'Calendars',
-            model: 'HomeAccounting.model.Calendar',
-            proxy: {
-                type: 'jsonp',
-                url: 'https://www.googleapis.com/calendar/v3/users/me/calendarList',
-                reader: {
-                    type: 'json',
-                    rootProperty: 'items'
-                }
-            }
-        }, cfg)]);
-    }
+	constructor: function(cfg) {
+		var me = this;
+		cfg = cfg || {};
+		me.callParent([Ext.apply({
+			storeId: 'Calendars',
+			model: 'HomeAccounting.model.Calendar',
+			proxy: {
+				type: 'jsonp',
+				url: 'https://www.googleapis.com/calendar/v3/users/me/calendarList',
+				reader: {
+					type: 'json',
+					rootProperty: 'items'
+				}
+			}
+		}, cfg)]);
+	}
 });

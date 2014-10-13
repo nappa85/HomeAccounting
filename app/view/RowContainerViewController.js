@@ -14,6 +14,6 @@
  */
 
 Ext.define('HomeAccounting.view.RowContainerViewController', {
-    extend: 'Ext.app.ViewController',
-    alias: 'controller.rowcontainer'
+	extend: 'Ext.app.ViewController',
+	alias: 'controller.rowcontainer'
 });

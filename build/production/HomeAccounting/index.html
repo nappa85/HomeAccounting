@@ -2,10 +2,10 @@
 
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <title>HomeAccounting</title>
-    <!-- The line below must be kept intact for Sencha Command to build your application -->
-    <script type="text/javascript">var Ext=Ext||{};Ext.manifest="app.json";Ext=Ext||{};
+	<meta charset="UTF-8">
+	<title>HomeAccounting</title>
+	<!-- The line below must be kept intact for Sencha Command to build your application -->
+	<script type="text/javascript">var Ext=Ext||{};Ext.manifest="app.json";Ext=Ext||{};
 Ext.Boot=Ext.Boot||function(h){function k(a){if(a.$isRequest)return a;a=a.url?a:{url:a};var b=a.url;p(a,{urls:b.charAt?[b]:b,charset:a.charset||d.config.charset});p(this,a)}function s(a){if(a.$isEntry)return a;var b=a.charset||d.config.charset,c=Ext.manifest,c=c&&c.loader,e=void 0!==a.cache?a.cache:c&&c.cache,l;void 0===e&&(e=!d.config.disableCaching);!1===e?l=+new Date:!0!==e&&(l=e);l&&(c=c&&c.cacheParam||d.config.disableCachingParam,l=c+"\x3d"+l);p(a,{charset:b,buster:l,requests:[]});p(this,a)}
 var j=document,m=function(a,b,c){c&&m(a,c);if(a&&b&&"object"==typeof b)for(var e in b)a[e]=b[e];return a},f={disableCaching:/[?&](?:cache|disableCacheBuster)\b/i.test(location.search)||!/http[s]?\:/i.test(location.href)||/(^|[ ;])ext-cache=1/.test(j.cookie)?!1:!0,disableCachingParam:"_dc",loadDelay:!1,preserveScripts:!0,charset:void 0},w=/\.css(?:\?|$)/i,v=j.createElement("a"),t="undefined"!==typeof window,q={browser:t,node:!t&&"function"===typeof require,phantom:"undefined"!==typeof phantom&&phantom.fs},
 r={},p=function(a,b,c){c&&p(a,c);if(a&&b&&"object"===typeof b)for(var e in b)a[e]=b[e];return a},d={loading:0,loaded:0,env:q,config:f,scripts:{},currentFile:null,suspendedQueue:[],currentRequest:null,syncMode:!1,useElements:!0,listeners:[],Request:k,Entry:s,platformTags:r,detectPlatformTags:function(){var a=navigator.userAgent,b=r.isMobile=/Mobile(\/|\s)/.test(a),c,e,l,n;c=document.createElement("div");e="iPhone;iPod;Android;Silk;Android 2;BlackBerry;BB;iPad;RIM Tablet OS;MSIE 10;Trident;Chrome;Tizen;Firefox;Safari;Windows Phone".split(";");

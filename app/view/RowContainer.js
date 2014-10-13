@@ -14,120 +14,120 @@
  */
 
 Ext.define('HomeAccounting.view.RowContainer', {
-    extend: 'Ext.form.FieldContainer',
-    alias: 'widget.rowcontainer',
+	extend: 'Ext.form.FieldContainer',
+	alias: 'widget.rowcontainer',
 
-    requires: [
-        'HomeAccounting.view.RowContainerViewModel',
-        'Ext.form.field.ComboBox',
-        'Ext.form.field.Number',
-        'Ext.button.Button'
-    ],
+	requires: [
+		'HomeAccounting.view.RowContainerViewModel',
+		'Ext.form.field.ComboBox',
+		'Ext.form.field.Number',
+		'Ext.button.Button'
+	],
 
-    viewModel: {
-        type: 'rowcontainer'
-    },
-    defaultListenerScope: true,
+	viewModel: {
+		type: 'rowcontainer'
+	},
+	defaultListenerScope: true,
 
-    layout: {
-        type: 'hbox',
-        align: 'stretch'
-    },
-    items: [
-        {
-            xtype: 'combobox',
-            flex: 2,
-            fieldLabel: 'Item',
-            name: 'item',
-            allowBlank: false,
-            allowOnlyWhitespace: false,
-            displayField: 'name',
-            queryMode: 'local',
-            store: 'Items',
-            typeAhead: true,
-            valueField: 'name',
-            listeners: {
-                change: 'onComboboxChange'
-            }
-        },
-        {
-            xtype: 'combobox',
-            flex: 2,
-            fieldLabel: 'Tag',
-            name: 'tag',
-            displayField: 'name',
-            queryMode: 'local',
-            store: 'Tags',
-            typeAhead: true,
-            valueField: 'name',
-            listeners: {
-                change: 'onComboboxChange1'
-            }
-        },
-        {
-            xtype: 'numberfield',
-            flex: 1,
-            fieldLabel: 'Number',
-            name: 'number',
-            value: 1,
-            allowBlank: false,
-            allowOnlyWhitespace: false,
-            allowExponential: false,
-            listeners: {
-                change: 'onNumberfieldChange'
-            }
-        },
-        {
-            xtype: 'numberfield',
-            flex: 1,
-            fieldLabel: 'Price',
-            name: 'price',
-            allowBlank: false,
-            allowOnlyWhitespace: false,
-            allowExponential: false,
-            listeners: {
-                change: 'onNumberfieldChange1'
-            }
-        },
-        {
-            xtype: 'button',
-            handler: function(button, e) {
-                button.up('rowcontainer').destroy();
-            },
-            text: 'Remove'
-        }
-    ],
+	layout: {
+		type: 'hbox',
+		align: 'stretch'
+	},
+	items: [
+		{
+			xtype: 'combobox',
+			flex: 2,
+			fieldLabel: 'Item',
+			name: 'item',
+			allowBlank: false,
+			allowOnlyWhitespace: false,
+			displayField: 'name',
+			queryMode: 'local',
+			store: 'Items',
+			typeAhead: true,
+			valueField: 'name',
+			listeners: {
+				change: 'onComboboxChange'
+			}
+		},
+		{
+			xtype: 'combobox',
+			flex: 2,
+			fieldLabel: 'Tag',
+			name: 'tag',
+			displayField: 'name',
+			queryMode: 'local',
+			store: 'Tags',
+			typeAhead: true,
+			valueField: 'name',
+			listeners: {
+				change: 'onComboboxChange1'
+			}
+		},
+		{
+			xtype: 'numberfield',
+			flex: 1,
+			fieldLabel: 'Number',
+			name: 'number',
+			value: 1,
+			allowBlank: false,
+			allowOnlyWhitespace: false,
+			allowExponential: false,
+			listeners: {
+				change: 'onNumberfieldChange'
+			}
+		},
+		{
+			xtype: 'numberfield',
+			flex: 1,
+			fieldLabel: 'Price',
+			name: 'price',
+			allowBlank: false,
+			allowOnlyWhitespace: false,
+			allowExponential: false,
+			listeners: {
+				change: 'onNumberfieldChange1'
+			}
+		},
+		{
+			xtype: 'button',
+			handler: function(button, e) {
+				button.up('rowcontainer').destroy();
+			},
+			text: 'Remove'
+		}
+	],
 
-    onComboboxChange: function(field, newValue, oldValue, eOpts) {
-        this.fireEvent('change');
-    },
+	onComboboxChange: function(field, newValue, oldValue, eOpts) {
+		this.fireEvent('change');
+	},
 
-    onComboboxChange1: function(field, newValue, oldValue, eOpts) {
-        this.fireEvent('change');
-    },
+	onComboboxChange1: function(field, newValue, oldValue, eOpts) {
+		this.fireEvent('change');
+	},
 
-    onNumberfieldChange: function(field, newValue, oldValue, eOpts) {
-        this.fireEvent('change');
-    },
+	onNumberfieldChange: function(field, newValue, oldValue, eOpts) {
+		this.fireEvent('change');
+	},
 
-    onNumberfieldChange1: function(field, newValue, oldValue, eOpts) {
-        this.fireEvent('change');
-    },
+	onNumberfieldChange1: function(field, newValue, oldValue, eOpts) {
+		this.fireEvent('change');
+	},
 
-    loadRecord: function(record) {
-        this.down('field[name=item]').setValue(record.item);
-        this.down('field[name=tag]').setValue(record.tag);
-        this.down('field[name=number]').setValue(record.number);
-        this.down('field[name=price]').setValue(record.price);
-    },
+	loadRecord: function(record) {
+		this.down('field[name=item]').setValue(record.item);
+		this.down('field[name=tag]').setValue(record.tag);
+		this.down('field[name=number]').setValue(record.number);
+		this.down('field[name=price]').setValue(record.price);
+	},
 
-    getValues: function() {
-        return {
-            item: this.down('field[name=item]').getSubmitValue(),
-            tag: this.down('field[name=tag]').getSubmitValue(),
-            number: this.down('field[name=number]').getSubmitValue(),
-            price: this.down('field[name=price]').getSubmitValue()
-        };
-    }
+	getValues: function() {
+		return {
+		    item: this.down('field[name=item]').getSubmitValue(),
+		    tag: this.down('field[name=tag]').getSubmitValue(),
+		    number: this.down('field[name=number]').getSubmitValue(),
+		    price: this.down('field[name=price]').getSubmitValue()
+		};
+	}
 
 });

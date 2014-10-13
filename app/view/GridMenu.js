@@ -14,44 +14,44 @@
  */
 
 Ext.define('HomeAccounting.view.GridMenu', {
-    extend: 'Ext.menu.Menu',
-    alias: 'widget.gridmenu',
+	extend: 'Ext.menu.Menu',
+	alias: 'widget.gridmenu',
 
-    requires: [
-        'HomeAccounting.view.GridMenuViewModel',
-        'Ext.menu.Item'
-    ],
+	requires: [
+		'HomeAccounting.view.GridMenuViewModel',
+		'Ext.menu.Item'
+	],
 
-    viewModel: {
-        type: 'gridmenu'
-    },
-    width: 120,
+	viewModel: {
+		type: 'gridmenu'
+	},
+	width: 120,
 
-    items: [
-        {
-            xtype: 'menuitem',
-            handler: function(item, e) {
-                Ext.create('HomeAccounting.view.EditWindow').loadRecord(this.parentMenu.record);
-            },
-            text: 'Edit'
-        },
-        {
-            xtype: 'menuitem',
-            handler: function(item, e) {
-                var xhr = new XMLHttpRequest();
-                xhr.open('DELETE', 'https://www.googleapis.com/calendar/v3/calendars/' + Ext.ComponentQuery.query('#calendarId')[0].getValue() + '/events/' + this.parentMenu.record.get('id'));
-                var oauthToken = gapi.auth.getToken();
-                xhr.setRequestHeader('Authorization', 'Bearer ' + oauthToken.access_token);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.onload = Ext.Function.bind(this.parentMenu.onEventDelete, this.parentMenu);
-                xhr.send();
-            },
-            text: 'Delete'
-        }
-    ],
+	items: [
+		{
+			xtype: 'menuitem',
+			handler: function(item, e) {
+				Ext.create('HomeAccounting.view.EditWindow').loadRecord(this.parentMenu.record);
+			},
+			text: 'Edit'
+		},
+		{
+			xtype: 'menuitem',
+			handler: function(item, e) {
+				var xhr = new XMLHttpRequest();
+				xhr.open('DELETE', 'https://www.googleapis.com/calendar/v3/calendars/' + Ext.ComponentQuery.query('#calendarId')[0].getValue() + '/events/' + this.parentMenu.record.get('id'));
+				var oauthToken = gapi.auth.getToken();
+				xhr.setRequestHeader('Authorization', 'Bearer ' + oauthToken.access_token);
+				xhr.setRequestHeader('Content-Type', 'application/json');
+				xhr.onload = Ext.Function.bind(this.parentMenu.onEventDelete, this.parentMenu);
+				xhr.send();
+			},
+			text: 'Delete'
+		}
+	],
 
-    onEventDelete: function() {
-        Ext.data.StoreManager.get('Events').load();
-    }
+	onEventDelete: function() {
+		Ext.data.StoreManager.get('Events').load();
+	}
 
 });

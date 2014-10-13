@@ -14,21 +14,21 @@
  */
 
 Ext.define('HomeAccounting.model.Generic', {
-    extend: 'Ext.data.Model',
+	extend: 'Ext.data.Model',
 
-    requires: [
-        'Ext.data.field.String',
-        'Ext.data.field.Number'
-    ],
+	requires: [
+		'Ext.data.field.String',
+		'Ext.data.field.Number'
+	],
 
-    fields: [
-        {
-            type: 'string',
-            name: 'name'
-        },
-        {
-            type: 'float',
-            name: 'total'
-        }
-    ]
+	fields: [
+		{
+			type: 'string',
+			name: 'name'
+		},
+		{
+			type: 'float',
+			name: 'total'
+		}
+	]
 });

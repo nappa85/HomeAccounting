@@ -14,7 +14,7 @@
  */
 
 Ext.define('HomeAccounting.view.MainViewModel', {
-    extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.main'
+	extend: 'Ext.app.ViewModel',
+	alias: 'viewmodel.main'
 
 });

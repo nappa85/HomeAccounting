@@ -14,6 +14,6 @@
  */
 
 Ext.define('HomeAccounting.view.EditWindowViewController', {
-    extend: 'Ext.app.ViewController',
-    alias: 'controller.editwindow'
+	extend: 'Ext.app.ViewController',
+	alias: 'controller.editwindow'
 });

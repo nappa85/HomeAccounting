@@ -14,7 +14,7 @@
  */
 
 Ext.define('HomeAccounting.view.EditWindowViewModel', {
-    extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.editwindow'
+	extend: 'Ext.app.ViewModel',
+	alias: 'viewmodel.editwindow'
 
 });

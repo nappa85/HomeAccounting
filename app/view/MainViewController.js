@@ -14,14 +14,14 @@
  */
 
 Ext.define('HomeAccounting.view.MainViewController', {
-    extend: 'Ext.app.ViewController',
-    alias: 'controller.main',
+	extend: 'Ext.app.ViewController',
+	alias: 'controller.main',
 
-    onComboboxChange: function(field, newValue, oldValue, eOpts) {
-        Ext.util.Cookies.set('calendarId', newValue);
-        var oEvents = Ext.data.StoreManager.get('Events');
-        oEvents.getProxy().url = 'https://www.googleapis.com/calendar/v3/calendars/' + newValue + '/events';
-        oEvents.load();
-    }
+	onComboboxChange: function(field, newValue, oldValue, eOpts) {
+		Ext.util.Cookies.set('calendarId', newValue);
+		var oEvents = Ext.data.StoreManager.get('Events');
+		oEvents.getProxy().url = 'https://www.googleapis.com/calendar/v3/calendars/' + newValue + '/events';
+		oEvents.load();
+	}
 
 });

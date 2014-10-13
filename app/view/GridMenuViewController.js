@@ -14,6 +14,6 @@
  */
 
 Ext.define('HomeAccounting.view.GridMenuViewController', {
-    extend: 'Ext.app.ViewController',
-    alias: 'controller.gridmenu'
+	extend: 'Ext.app.ViewController',
+	alias: 'controller.gridmenu'
 });

@@ -14,100 +14,100 @@
  */
 
 Ext.define('HomeAccounting.model.Event', {
-    extend: 'Ext.data.Model',
+	extend: 'Ext.data.Model',
 
-    requires: [
-        'Ext.data.field.String',
-        'Ext.data.field.Date',
-        'Ext.data.field.Number'
-    ],
+	requires: [
+		'Ext.data.field.String',
+		'Ext.data.field.Date',
+		'Ext.data.field.Number'
+	],
 
-    fields: [
-        {
-            type: 'string',
-            name: 'id'
-        },
-        {
-            type: 'string',
-            name: 'summary'
-        },
-        {
-            type: 'date',
-            convert: function(v, rec) {
-                return v.dateTime;
-            },
-            name: 'start',
-            dateFormat: 'c'
-        },
-        {
-            type: 'string',
-            convert: function(v, rec) {
-                var oMerchants = Ext.data.StoreManager.get('Merchants'),
-                    oItems = Ext.data.StoreManager.get('Items'),
-                    oTags = Ext.data.StoreManager.get('Tags'),
-                    i = 0,
-                    oGeneric;
+	fields: [
+		{
+			type: 'string',
+			name: 'id'
+		},
+		{
+			type: 'string',
+			name: 'summary'
+		},
+		{
+			type: 'date',
+			convert: function(v, rec) {
+				return v.dateTime;
+			},
+			name: 'start',
+			dateFormat: 'c'
+		},
+		{
+			type: 'string',
+			convert: function(v, rec) {
+				var oMerchants = Ext.data.StoreManager.get('Merchants'),
+					oItems = Ext.data.StoreManager.get('Items'),
+					oTags = Ext.data.StoreManager.get('Tags'),
+					i = 0,
+					oGeneric;
 
-                try {
-                    Ext.apply(rec.data, Ext.JSON.decode(v, true));
+				try {
+					Ext.apply(rec.data, Ext.JSON.decode(v, true));
 
-                    oGeneric = oMerchants.findRecord('name', rec.data.merchant, 0, false, false, true);
-                    if(oGeneric === null) {
-                        oMerchants.add({name: rec.data.merchant, total: rec.data.total});
-                    }
-                    else {
-                        oGeneric.set('total', oGeneric.get('total') + rec.data.total);
-                    }
+					oGeneric = oMerchants.findRecord('name', rec.data.merchant, 0, false, false, true);
+					if(oGeneric === null) {
+						oMerchants.add({name: rec.data.merchant, total: rec.data.total});
+					}
+					else {
+						oGeneric.set('total', oGeneric.get('total') + rec.data.total);
+					}
 
-                    for(; i < rec.data.rows.length; i++) {
-                        oGeneric = oItems.findRecord('name', rec.data.rows[i].item, 0, false, false, true);
-                        if(oGeneric === null) {
-                            oItems.add({name: rec.data.rows[i].item, total: (rec.data.rows[i].number * rec.data.rows[i].price)});
-                        }
-                        else {
-                            oGeneric.set('total', oGeneric.get('total') + (rec.data.rows[i].number * rec.data.rows[i].price));
-                        }
+					for(; i < rec.data.rows.length; i++) {
+						oGeneric = oItems.findRecord('name', rec.data.rows[i].item, 0, false, false, true);
+						if(oGeneric === null) {
+							oItems.add({name: rec.data.rows[i].item, total: (rec.data.rows[i].number * rec.data.rows[i].price)});
+						}
+						else {
+							oGeneric.set('total', oGeneric.get('total') + (rec.data.rows[i].number * rec.data.rows[i].price));
+						}
 
-                        if(!Ext.isEmpty(rec.data.rows[i].tag)) {
-                            oGeneric = oTags.findRecord('name', rec.data.rows[i].tag, 0, false, false, true);
-                            if(oGeneric === null) {
-                                oTags.add({name: rec.data.rows[i].tag, total: (rec.data.rows[i].number * rec.data.rows[i].price)});
-                            }
-                            else {
-                                oGeneric.set('total', oGeneric.get('total') + (rec.data.rows[i].number * rec.data.rows[i].price));
-                            }
-                        }
-                    }
-                }
-                catch(e) {
-                    if(console && console.log) {
-                        console.log(e);
-                    }
-                }
-                return v;
-            },
-            name: 'description'
-        },
-        {
-            type: 'string',
-            name: 'merchant'
-        },
-        {
-            type: 'date',
-            name: 'date',
-            dateFormat: 'Y-m-d'
-        },
-        {
-            type: 'date',
-            name: 'time',
-            dateFormat: 'H:i:s'
-        },
-        {
-            type: 'float',
-            name: 'total'
-        },
-        {
-            name: 'rows'
-        }
-    ]
+						if(!Ext.isEmpty(rec.data.rows[i].tag)) {
+							oGeneric = oTags.findRecord('name', rec.data.rows[i].tag, 0, false, false, true);
+							if(oGeneric === null) {
+								oTags.add({name: rec.data.rows[i].tag, total: (rec.data.rows[i].number * rec.data.rows[i].price)});
+							}
+							else {
+								oGeneric.set('total', oGeneric.get('total') + (rec.data.rows[i].number * rec.data.rows[i].price));
+							}
+						}
+					}
+				}
+				catch(e) {
+					if(console && console.log) {
+						console.log(e);
+					}
+				}
+				return v;
+			},
+			name: 'description'
+		},
+		{
+			type: 'string',
+			name: 'merchant'
+		},
+		{
+			type: 'date',
+			name: 'date',
+			dateFormat: 'Y-m-d'
+		},
+		{
+			type: 'date',
+			name: 'time',
+			dateFormat: 'H:i:s'
+		},
+		{
+			type: 'float',
+			name: 'total'
+		},
+		{
+			name: 'rows'
+		}
+	]
 });

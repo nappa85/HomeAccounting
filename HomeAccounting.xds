@@ -2,7 +2,7 @@
     "name": "HomeAccounting",
     "settings": {
         "cmd": {
-            "license": "commercial",
+            "license": "gpl",
             "cmdVersion": "5.0.2.270",
             "frameworkVersion": "5.0.1.1189"
         },
@@ -16,18 +16,20 @@
         },
         "urlPrefix": "http://localhost:1841",
         "exportPath": "",
-        "spacesToIndent": 4,
+        "spacesToIndent": "tab",
         "sdkPath": "",
-        "lineEnding": "CRLF",
+        "lineEnding": "LF",
         "genTimestamps": false,
         "cacheBust": false,
         "buildShouldOverwriteIndex": true,
         "generateArchitectVersion": true,
-        "projectHasEnabledWebServer": true,
+        "projectHasEnabledWebServer": false,
         "lastBuildSelection": {
             "value": "webBuild",
             "display": "Build web app"
-        }
+        },
+        "lockUrlPrefix": false,
+        "installStatus": "Not Installed"
     },
     "xdsVersion": "3.1.0",
     "xdsBuild": 1903,
