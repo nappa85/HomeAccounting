@@ -89,7 +89,7 @@ Ext.define('HomeAccounting.view.EditWindow', {
 					items: [
 						{
 							xtype: 'displayfield',
-							flex: 1,
+							flex: 2,
 							fieldLabel: 'Item'
 						},
 						{

@@ -145,7 +145,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Item",
-                                "layout|flex": 1,
+                                "layout|flex": 2,
                                 "value": null
                             },
                             "name": "MyDisplayField2",
