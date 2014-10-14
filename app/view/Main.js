@@ -29,6 +29,7 @@ Ext.define('HomeAccounting.view.Main', {
 		'Ext.grid.View',
 		'Ext.grid.column.Number',
 		'Ext.tab.Tab',
+		'Ext.grid.feature.Summary',
 		'Ext.chart.PolarChart',
 		'Ext.chart.series.Pie',
 		'Ext.chart.series.sprite.PieSlice',
@@ -140,6 +141,7 @@ Ext.define('HomeAccounting.view.Main', {
 						},
 						{
 							xtype: 'numbercolumn',
+							summaryType: 'sum',
 							dataIndex: 'total',
 							text: 'Total',
 							flex: 1
@@ -148,7 +150,12 @@ Ext.define('HomeAccounting.view.Main', {
 					listeners: {
 						itemdblclick: 'onGridpanelItemDblClick',
 						itemcontextmenu: 'onGridpanelItemContextMenu'
-					}
+					},
+					features: [
+						{
+							ftype: 'summary'
+						}
+					]
 				},
 				{
 					xtype: 'polar',

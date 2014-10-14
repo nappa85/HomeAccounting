@@ -316,6 +316,7 @@
                             "userConfig": {
                                 "dataIndex": "total",
                                 "flex": 1,
+                                "summaryType": "sum",
                                 "text": "Total"
                             },
                             "name": "MyNumberColumn",
@@ -367,6 +368,16 @@
                             "codeClass": null,
                             "name": "TabConfig1",
                             "designerId": "2a667c98-db22-4c6e-9c3b-6d244c9fa816"
+                        },
+                        {
+                            "type": "Ext.grid.feature.Summary",
+                            "reference": {
+                                "name": "features",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySummaryFeature",
+                            "designerId": "0a7d4a15-a424-4600-b039-0fc5bd9c85ed"
                         }
                     ]
                 },
