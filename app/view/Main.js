@@ -233,14 +233,14 @@ Ext.define('HomeAccounting.view.Main', {
 	],
 
 	onStartDateChange: function(field, newValue, oldValue, eOpts) {
-		if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId').getValue())) {
+		if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId')[0].getValue())) {
 		   Ext.data.StoreManager.get('Events').load();
 		}
 	},
 
 	onEndDateChange: function(field, newValue, oldValue, eOpts) {
-		if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId').getValue())) {
-		   Ext.data.StoreManager.get('Events').load();
+		if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId')[0].getValue())) {
+			Ext.data.StoreManager.get('Events').load();
 		}
 	},
 

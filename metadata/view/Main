@@ -129,7 +129,7 @@
                                     "userConfig": {
                                         "fn": "onStartDateChange",
                                         "implHandler": [
-                                            "if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId').getValue())) {",
+                                            "if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId')[0].getValue())) {",
                                             "   Ext.data.StoreManager.get('Events').load();",
                                             "}"
                                         ],
@@ -169,8 +169,8 @@
                                     "userConfig": {
                                         "fn": "onEndDateChange",
                                         "implHandler": [
-                                            "if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId').getValue())) {",
-                                            "   Ext.data.StoreManager.get('Events').load();",
+                                            "if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId')[0].getValue())) {",
+                                            "\tExt.data.StoreManager.get('Events').load();",
                                             "}"
                                         ],
                                         "name": "change",
