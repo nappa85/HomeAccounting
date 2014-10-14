@@ -37,8 +37,7 @@ Ext.define('HomeAccounting.view.RowContainer', {
 		{
 			xtype: 'combobox',
 			flex: 2,
-			minWidth: 200,
-			fieldLabel: 'Item',
+			minWidth: 150,
 			labelWidth: 50,
 			name: 'item',
 			allowBlank: false,
@@ -55,8 +54,7 @@ Ext.define('HomeAccounting.view.RowContainer', {
 		{
 			xtype: 'combobox',
 			flex: 2,
-			minWidth: 200,
-			fieldLabel: 'Tag',
+			minWidth: 150,
 			labelWidth: 50,
 			name: 'tag',
 			displayField: 'name',
@@ -71,8 +69,7 @@ Ext.define('HomeAccounting.view.RowContainer', {
 		{
 			xtype: 'numberfield',
 			flex: 1,
-			minWidth: 200,
-			fieldLabel: 'Number',
+			minWidth: 150,
 			labelWidth: 50,
 			name: 'number',
 			value: 1,
@@ -86,8 +83,7 @@ Ext.define('HomeAccounting.view.RowContainer', {
 		{
 			xtype: 'numberfield',
 			flex: 1,
-			minWidth: 200,
-			fieldLabel: 'Price',
+			minWidth: 150,
 			labelWidth: 50,
 			name: 'price',
 			allowBlank: false,

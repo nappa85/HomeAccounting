@@ -121,15 +121,82 @@
             "designerId": "1e47a373-aaca-49d8-9b8d-72b9a11c77b8",
             "cn": [
                 {
-                    "type": "linkedinstance",
+                    "type": "Ext.form.FieldContainer",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
-                    "name": "rowcontainer",
-                    "designerId": "dfb6578e-8dc4-4c35-a236-4d9b641fd97a",
-                    "masterInstanceId": "8be3716c-9863-4074-8e20-868f503cfc6f"
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "fieldLabel": null,
+                        "height": null,
+                        "layout": "hbox"
+                    },
+                    "name": "MyFieldContainer",
+                    "designerId": "2dd8a961-17c5-44dd-8952-1990a0af8a37",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Item",
+                                "layout|flex": 1,
+                                "value": null
+                            },
+                            "name": "MyDisplayField2",
+                            "designerId": "e6742a2a-bf0f-4fad-8f49-833219a55ac4"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Tag",
+                                "layout|flex": 1,
+                                "value": null
+                            },
+                            "name": "MyDisplayField1",
+                            "designerId": "9c7d7cc1-e80b-48a2-861f-12896ae5371f"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Number",
+                                "layout|flex": 1,
+                                "value": null
+                            },
+                            "name": "MyDisplayField",
+                            "designerId": "df3c7039-26d5-4ba8-8a03-afb67ea141fe"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Price",
+                                "layout|flex": 1,
+                                "value": null
+                            },
+                            "name": "MyDisplayField3",
+                            "designerId": "a8e1e8ea-66fc-4fed-9e4d-169a3227288f"
+                        }
+                    ]
                 }
             ]
         },
@@ -167,8 +234,6 @@
                     "    i = 0,",
                     "    j = 0,",
                     "    aRows;",
-                    "",
-                    "oFieldset.removeAll();",
                     "",
                     "if(!Ext.isEmpty(record)) {",
                     "    this.setTitle(record.get('summary'));",

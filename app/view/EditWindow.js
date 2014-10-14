@@ -19,12 +19,12 @@ Ext.define('HomeAccounting.view.EditWindow', {
 
 	requires: [
 		'HomeAccounting.view.EditWindowViewModel',
-		'HomeAccounting.view.RowContainer',
 		'Ext.form.field.Hidden',
 		'Ext.form.field.Date',
 		'Ext.form.field.Time',
 		'Ext.form.FieldSet',
 		'Ext.form.FieldContainer',
+		'Ext.form.field.Display',
 		'Ext.toolbar.Toolbar'
 	],
 
@@ -81,7 +81,33 @@ Ext.define('HomeAccounting.view.EditWindow', {
 			title: 'Rows',
 			items: [
 				{
-					xtype: 'rowcontainer'
+					xtype: 'fieldcontainer',
+					layout: {
+						type: 'hbox',
+						align: 'stretch'
+					},
+					items: [
+						{
+							xtype: 'displayfield',
+							flex: 1,
+							fieldLabel: 'Item'
+						},
+						{
+							xtype: 'displayfield',
+							flex: 1,
+							fieldLabel: 'Tag'
+						},
+						{
+							xtype: 'displayfield',
+							flex: 1,
+							fieldLabel: 'Number'
+						},
+						{
+							xtype: 'displayfield',
+							flex: 1,
+							fieldLabel: 'Price'
+						}
+					]
 				}
 			]
 		}
@@ -104,8 +130,6 @@ Ext.define('HomeAccounting.view.EditWindow', {
 		    i = 0,
 		    j = 0,
 		    aRows;
-
-		oFieldset.removeAll();
 
 		if(!Ext.isEmpty(record)) {
 		    this.setTitle(record.get('summary'));
