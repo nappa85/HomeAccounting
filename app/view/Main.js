@@ -141,6 +141,9 @@ Ext.define('HomeAccounting.view.Main', {
 						},
 						{
 							xtype: 'numbercolumn',
+							summaryRenderer: function(val, params, data) {
+								return Ext.util.Format.currency(val);
+							},
 							summaryType: 'sum',
 							dataIndex: 'total',
 							text: 'Total',

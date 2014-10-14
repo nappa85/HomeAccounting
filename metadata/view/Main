@@ -320,7 +320,30 @@
                                 "text": "Total"
                             },
                             "name": "MyNumberColumn",
-                            "designerId": "2261c47e-3b16-4c00-b7dd-192d6e324534"
+                            "designerId": "2261c47e-3b16-4c00-b7dd-192d6e324534",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "return Ext.util.Format.currency(val);"
+                                        ]
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "51927b69-1f89-4e1d-b92b-2532e0eb8bb6"
+                                }
+                            ]
                         },
                         {
                             "type": "basiceventbinding",
