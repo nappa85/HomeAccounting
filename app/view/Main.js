@@ -76,16 +76,22 @@ Ext.define('HomeAccounting.view.Main', {
 							itemId: 'startDate',
 							fieldLabel: 'Start',
 							name: 'startDate',
-							format: 'c',
-							submitFormat: 'c'
+							format: 'Y-m-d',
+							submitFormat: 'c',
+							listeners: {
+								change: 'onStartDateChange'
+							}
 						},
 						{
 							xtype: 'datefield',
 							itemId: 'endDate',
 							fieldLabel: 'End',
 							name: 'endDate',
-							format: 'c',
-							submitFormat: 'c'
+							format: 'Y-m-d',
+							submitFormat: 'c',
+							listeners: {
+								change: 'onEndDateChange'
+							}
 						}
 					]
 				}
@@ -225,6 +231,18 @@ Ext.define('HomeAccounting.view.Main', {
 			]
 		}
 	],
+
+	onStartDateChange: function(field, newValue, oldValue, eOpts) {
+		if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId').getValue())) {
+		   Ext.data.StoreManager.get('Events').load();
+		}
+	},
+
+	onEndDateChange: function(field, newValue, oldValue, eOpts) {
+		if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId').getValue())) {
+		   Ext.data.StoreManager.get('Events').load();
+		}
+	},
 
 	onGridpanelItemDblClick: function(dataview, record, item, index, e, eOpts) {
 		Ext.create('HomeAccounting.view.EditWindow').loadRecord(record);

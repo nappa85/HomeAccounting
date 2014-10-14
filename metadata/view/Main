@@ -110,14 +110,36 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Start",
-                                "format": "c",
+                                "format": "Y-m-d",
                                 "itemId": "startDate",
                                 "layout|flex": null,
                                 "name": "startDate",
                                 "submitFormat": "c"
                             },
                             "name": "MyDateField1",
-                            "designerId": "44358953-76cc-4563-ae98-19ccbc6a5757"
+                            "designerId": "44358953-76cc-4563-ae98-19ccbc6a5757",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onStartDateChange",
+                                        "implHandler": [
+                                            "if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId').getValue())) {",
+                                            "   Ext.data.StoreManager.get('Events').load();",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onStartDateChange",
+                                    "designerId": "78fbf01d-8354-4807-9f1f-7626ec918bf2"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Date",
@@ -128,14 +150,36 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "End",
-                                "format": "c",
+                                "format": "Y-m-d",
                                 "itemId": "endDate",
                                 "layout|flex": null,
                                 "name": "endDate",
                                 "submitFormat": "c"
                             },
                             "name": "MyDateField2",
-                            "designerId": "9788a1ab-bf97-484d-b714-ffec6972080f"
+                            "designerId": "9788a1ab-bf97-484d-b714-ffec6972080f",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onEndDateChange",
+                                        "implHandler": [
+                                            "if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId').getValue())) {",
+                                            "   Ext.data.StoreManager.get('Events').load();",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onEndDateChange",
+                                    "designerId": "eb409bc8-30dd-47aa-b18b-7094e5619ec8"
+                                }
+                            ]
                         }
                     ]
                 },
