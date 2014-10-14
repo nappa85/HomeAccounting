@@ -31,6 +31,7 @@
                 "allowOnlyWhitespace": false,
                 "displayField": "name",
                 "fieldLabel": "Item",
+                "labelWidth": 50,
                 "layout|flex": 2,
                 "name": "item",
                 "queryMode": "local",
@@ -72,6 +73,7 @@
             "userConfig": {
                 "displayField": "name",
                 "fieldLabel": "Tag",
+                "labelWidth": 50,
                 "layout|flex": 2,
                 "name": "tag",
                 "queryMode": "local",
@@ -115,6 +117,7 @@
                 "allowExponential": false,
                 "allowOnlyWhitespace": false,
                 "fieldLabel": "Number",
+                "labelWidth": 50,
                 "layout|flex": 1,
                 "name": "number",
                 "tabIndex": null,
@@ -157,6 +160,7 @@
                 "allowExponential": false,
                 "allowOnlyWhitespace": false,
                 "fieldLabel": "Price",
+                "labelWidth": 50,
                 "layout|flex": 1,
                 "name": "price",
                 "tabIndex": null
