@@ -31,6 +31,7 @@ Ext.define('HomeAccounting.view.EditWindow', {
 	viewModel: {
 		type: 'editwindow'
 	},
+	autoScroll: true,
 	autoShow: true,
 	layout: 'anchor',
 	bodyPadding: 10,
@@ -80,7 +81,6 @@ Ext.define('HomeAccounting.view.EditWindow', {
 		},
 		{
 			xtype: 'fieldset',
-			autoScroll: true,
 			title: 'Rows',
 			items: [
 				{
