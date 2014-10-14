@@ -34,7 +34,7 @@ Ext.define('HomeAccounting.model.Event', {
 		{
 			type: 'date',
 			convert: function(v, rec) {
-				return v.dateTime;
+				return Ext.Date.parse(v.dateTime, 'c');
 			},
 			name: 'start',
 			dateFormat: 'c'

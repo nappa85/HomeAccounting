@@ -30,6 +30,10 @@ Ext.define('HomeAccounting.view.Main', {
 		'Ext.grid.column.Column',
 		'Ext.tab.Tab',
 		'Ext.grid.feature.Summary',
+		'Ext.chart.CartesianChart',
+		'Ext.chart.axis.Time',
+		'Ext.chart.series.Line',
+		'Ext.chart.interactions.PanZoom',
 		'Ext.chart.PolarChart',
 		'Ext.chart.series.Pie',
 		'Ext.chart.series.sprite.PieSlice',
@@ -160,6 +164,42 @@ Ext.define('HomeAccounting.view.Main', {
 					features: [
 						{
 							ftype: 'summary'
+						}
+					]
+				},
+				{
+					xtype: 'cartesian',
+					title: 'Timeline',
+					store: 'Events',
+					axes: [
+						{
+							type: 'time',
+							fields: [
+								'start'
+							],
+							dateFormat: 'Y-m-d',
+							position: 'bottom'
+						},
+						{
+							type: 'numeric',
+							fields: [
+								'total'
+							],
+							position: 'left'
+						}
+					],
+					series: [
+						{
+							type: 'line',
+							xField: 'start',
+							yField: [
+								'total'
+							]
+						}
+					],
+					interactions: [
+						{
+							type: 'panzoom'
 						}
 					]
 				},

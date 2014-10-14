@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoScroll": null,
         "designer|initialView": true,
         "designer|userAlias": "main",
         "designer|userClassName": "Main",
@@ -426,6 +427,96 @@
                             "codeClass": null,
                             "name": "MySummaryFeature",
                             "designerId": "0a7d4a15-a424-4600-b039-0fc5bd9c85ed"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.CartesianChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "colors": null,
+                        "store": "Events",
+                        "title": "Timeline"
+                    },
+                    "name": "MyLineChart",
+                    "designerId": "67486198-b3f8-47ae-ba0f-9a2a4fbd269b",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-line-chart",
+                    "autoName": "MyLineChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.axis.Time",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dateFormat": "Y-m-d",
+                                "fields": [
+                                    "start"
+                                ],
+                                "title": null
+                            },
+                            "name": "MyTimeAxis",
+                            "designerId": "33cc1bd5-4f9d-4390-9778-1adce31e77ea"
+                        },
+                        {
+                            "type": "Ext.chart.axis.Numeric",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fields": [
+                                    "total"
+                                ],
+                                "position": "left",
+                                "title": null
+                            },
+                            "name": "MyNumericAxis1",
+                            "designerId": "372bbb5c-9a4e-4597-878f-19dd96782f8e"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "xField": "start",
+                                "yField": [
+                                    "total"
+                                ]
+                            },
+                            "name": "MyLineSeries2",
+                            "designerId": "8183da7c-2b2f-4273-bfb1-e021a46e17cb"
+                        },
+                        {
+                            "type": "Ext.chart.interactions.PanZoom",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyPanZoomInteraction1",
+                            "designerId": "42ce4577-1eda-4395-b038-519ca0bcd34e"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig",
+                            "designerId": "7aa9e64c-372c-4cdd-921f-80dd93f0bc02"
                         }
                     ]
                 },
