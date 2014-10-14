@@ -58,7 +58,7 @@
                 "name": "merchant",
                 "queryMode": "local",
                 "store": "Merchants",
-                "tabIndex": 1,
+                "tabIndex": null,
                 "typeAhead": true,
                 "valueField": null
             },
@@ -80,7 +80,7 @@
                 "layout|anchor": "100%",
                 "name": "date",
                 "submitFormat": "Y-m-d",
-                "tabIndex": 2
+                "tabIndex": null
             },
             "name": "MyDateField",
             "designerId": "55f066bf-e98a-4618-bbc2-c99e9e57265d"
@@ -100,7 +100,7 @@
                 "layout|anchor": "100%",
                 "name": "time",
                 "submitFormat": "H:i:s",
-                "tabIndex": 3
+                "tabIndex": null
             },
             "name": "MyTimeField",
             "designerId": "b7282415-d21c-493f-906f-04b624dbd95c"
@@ -113,7 +113,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "autoScroll": null,
+                "autoScroll": true,
                 "tabIndex": null,
                 "title": "Rows"
             },
@@ -130,29 +130,6 @@
                     "name": "rowcontainer",
                     "designerId": "dfb6578e-8dc4-4c35-a236-4d9b641fd97a",
                     "masterInstanceId": "8be3716c-9863-4074-8e20-868f503cfc6f"
-                },
-                {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onFieldsetAdd",
-                        "implHandler": [
-                            "var aFields = Ext.ComponentQuery.query('field', container),",
-                            "    i = 0;",
-                            "",
-                            "for(; i < aFields.length; i++) {",
-                            "    aFields[i].tabIndex = 4 + i;",
-                            "}"
-                        ],
-                        "name": "add",
-                        "scope": "me"
-                    },
-                    "name": "onFieldsetAdd",
-                    "designerId": "79541394-ef49-4db8-910c-b403fbf3c922"
                 }
             ]
         },

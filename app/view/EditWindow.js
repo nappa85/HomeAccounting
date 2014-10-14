@@ -38,7 +38,6 @@ Ext.define('HomeAccounting.view.EditWindow', {
 	title: 'Add Event',
 	maximized: true,
 	modal: true,
-	defaultListenerScope: true,
 
 	items: [
 		{
@@ -48,7 +47,6 @@ Ext.define('HomeAccounting.view.EditWindow', {
 		{
 			xtype: 'combobox',
 			anchor: '100%',
-			tabIndex: 1,
 			fieldLabel: 'Merchant',
 			name: 'merchant',
 			allowBlank: false,
@@ -60,7 +58,6 @@ Ext.define('HomeAccounting.view.EditWindow', {
 		{
 			xtype: 'datefield',
 			anchor: '100%',
-			tabIndex: 2,
 			fieldLabel: 'Date',
 			name: 'date',
 			allowBlank: false,
@@ -71,7 +68,6 @@ Ext.define('HomeAccounting.view.EditWindow', {
 		{
 			xtype: 'timefield',
 			anchor: '100%',
-			tabIndex: 3,
 			fieldLabel: 'Time',
 			name: 'time',
 			allowBlank: false,
@@ -81,15 +77,13 @@ Ext.define('HomeAccounting.view.EditWindow', {
 		},
 		{
 			xtype: 'fieldset',
+			autoScroll: true,
 			title: 'Rows',
 			items: [
 				{
 					xtype: 'rowcontainer'
 				}
-			],
-			listeners: {
-				add: 'onFieldsetAdd'
-			}
+			]
 		}
 	],
 	dockedItems: [
@@ -103,15 +97,6 @@ Ext.define('HomeAccounting.view.EditWindow', {
 			}
 		}
 	],
-
-	onFieldsetAdd: function(container, component, index, eOpts) {
-		var aFields = Ext.ComponentQuery.query('field', container),
-		    i = 0;
-
-		for(; i < aFields.length; i++) {
-		    aFields[i].tabIndex = 4 + i;
-		}
-	},
 
 	loadRecord: function(record) {
 		var oFieldset = this.down('fieldset'),
