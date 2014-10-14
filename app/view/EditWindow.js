@@ -94,7 +94,7 @@ Ext.define('HomeAccounting.view.EditWindow', {
 						},
 						{
 							xtype: 'displayfield',
-							flex: 1,
+							flex: 2,
 							fieldLabel: 'Tag'
 						},
 						{
@@ -106,6 +106,10 @@ Ext.define('HomeAccounting.view.EditWindow', {
 							xtype: 'displayfield',
 							flex: 1,
 							fieldLabel: 'Price'
+						},
+						{
+							xtype: 'displayfield',
+							width: 60
 						}
 					]
 				}

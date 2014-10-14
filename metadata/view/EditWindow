@@ -160,7 +160,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Tag",
-                                "layout|flex": 1,
+                                "layout|flex": 2,
                                 "value": null
                             },
                             "name": "MyDisplayField1",
@@ -195,6 +195,22 @@
                             },
                             "name": "MyDisplayField3",
                             "designerId": "a8e1e8ea-66fc-4fed-9e4d-169a3227288f"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "layout|flex": null,
+                                "value": null,
+                                "width": 60
+                            },
+                            "name": "MyDisplayField4",
+                            "designerId": "083f0b35-3640-4df0-ac58-909ae0b93908"
                         }
                     ]
                 }

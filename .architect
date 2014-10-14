@@ -185,6 +185,9 @@
                                 },
                                 {
                                     "id": "a8e1e8ea-66fc-4fed-9e4d-169a3227288f"
+                                },
+                                {
+                                    "id": "083f0b35-3640-4df0-ac58-909ae0b93908"
                                 }
                             ]
                         }
@@ -433,7 +436,7 @@
     },
     "inspectorState": {
         "topInstance": "4ac40039-e2bf-47c3-954e-e3c412a37af1",
-        "selectedInstance": "e6742a2a-bf0f-4fad-8f49-833219a55ac4"
+        "selectedInstance": "083f0b35-3640-4df0-ac58-909ae0b93908"
     },
     "editMode": "code",
     "userSettings": {
