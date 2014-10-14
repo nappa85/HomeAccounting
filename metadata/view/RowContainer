@@ -33,6 +33,7 @@
                 "fieldLabel": "Item",
                 "labelWidth": 50,
                 "layout|flex": 2,
+                "minWidth": 100,
                 "name": "item",
                 "queryMode": "local",
                 "store": "Items",
@@ -75,6 +76,7 @@
                 "fieldLabel": "Tag",
                 "labelWidth": 50,
                 "layout|flex": 2,
+                "minWidth": 100,
                 "name": "tag",
                 "queryMode": "local",
                 "store": "Tags",
@@ -119,6 +121,7 @@
                 "fieldLabel": "Number",
                 "labelWidth": 50,
                 "layout|flex": 1,
+                "minWidth": 100,
                 "name": "number",
                 "tabIndex": null,
                 "value": [
@@ -162,6 +165,7 @@
                 "fieldLabel": "Price",
                 "labelWidth": 50,
                 "layout|flex": 1,
+                "minWidth": 100,
                 "name": "price",
                 "tabIndex": null
             },
