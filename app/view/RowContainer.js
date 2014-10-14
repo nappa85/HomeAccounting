@@ -119,10 +119,10 @@ Ext.define('HomeAccounting.view.RowContainer', {
 
 	getValues: function() {
 		return {
-		    item: this.down('field[name=item]').getSubmitValue(),
-		    tag: this.down('field[name=tag]').getSubmitValue(),
-		    number: this.down('field[name=number]').getSubmitValue(),
-		    price: this.down('field[name=price]').getSubmitValue()
+		    item: this.down('field[name=item]').getValue(),
+		    tag: this.down('field[name=tag]').getValue(),
+		    number: this.down('field[name=number]').getValue(),
+		    price: this.down('field[name=price]').getValue()
 		};
 	}
 

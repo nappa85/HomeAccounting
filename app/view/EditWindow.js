@@ -77,7 +77,6 @@ Ext.define('HomeAccounting.view.EditWindow', {
 		},
 		{
 			xtype: 'fieldset',
-			autoScroll: true,
 			title: 'Rows',
 			items: [
 				{
@@ -185,7 +184,7 @@ Ext.define('HomeAccounting.view.EditWindow', {
 			sId = this.down('field[name=id]').getValue(),
 			aRows = this.query('rowcontainer'),
 			oValue = {
-				merchant: this.down('field[name=merchant]').getSubmitValue(),
+				merchant: this.down('field[name=merchant]').getValue(),
 				date: this.down('field[name=date]').getSubmitValue(),
 				time: this.down('field[name=time]').getSubmitValue(),
 				rows: [],

@@ -113,7 +113,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "autoScroll": true,
+                "autoScroll": null,
                 "tabIndex": null,
                 "title": "Rows"
             },
@@ -328,7 +328,7 @@
                     "\tsId = this.down('field[name=id]').getValue(),",
                     "\taRows = this.query('rowcontainer'),",
                     "\toValue = {",
-                    "\t\tmerchant: this.down('field[name=merchant]').getSubmitValue(),",
+                    "\t\tmerchant: this.down('field[name=merchant]').getValue(),",
                     "\t\tdate: this.down('field[name=date]').getSubmitValue(),",
                     "\t\ttime: this.down('field[name=time]').getSubmitValue(),",
                     "\t\trows: [],",
