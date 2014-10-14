@@ -27,7 +27,7 @@ Ext.define('HomeAccounting.view.Main', {
 		'Ext.form.field.Date',
 		'Ext.grid.Panel',
 		'Ext.grid.View',
-		'Ext.grid.column.Number',
+		'Ext.grid.column.Column',
 		'Ext.tab.Tab',
 		'Ext.grid.feature.Summary',
 		'Ext.chart.PolarChart',
@@ -140,9 +140,12 @@ Ext.define('HomeAccounting.view.Main', {
 							flex: 1
 						},
 						{
-							xtype: 'numbercolumn',
+							xtype: 'gridcolumn',
 							summaryRenderer: function(val, params, data) {
 								return Ext.util.Format.currency(val);
+							},
+							renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+								return Ext.util.Format.currency(value);
 							},
 							summaryType: 'sum',
 							dataIndex: 'total',

@@ -307,7 +307,7 @@
                             "designerId": "5b67d89b-22e1-4aa5-90fa-3355ed2f801d"
                         },
                         {
-                            "type": "Ext.grid.column.Number",
+                            "type": "Ext.grid.column.Column",
                             "reference": {
                                 "name": "columns",
                                 "type": "array"
@@ -319,7 +319,7 @@
                                 "summaryType": "sum",
                                 "text": "Total"
                             },
-                            "name": "MyNumberColumn",
+                            "name": "MyColumn2",
                             "designerId": "2261c47e-3b16-4c00-b7dd-192d6e324534",
                             "cn": [
                                 {
@@ -342,6 +342,31 @@
                                     },
                                     "name": "summaryRenderer",
                                     "designerId": "51927b69-1f89-4e1d-b92b-2532e0eb8bb6"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "return Ext.util.Format.currency(value);"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "629c4985-2e02-4b6f-a18e-88b201032bfb"
                                 }
                             ]
                         },

@@ -467,7 +467,7 @@ $include-ext-grid-column-boolean: false;
 $include-ext-grid-column-check: false;
 $include-ext-grid-column-column: true;
 $include-ext-grid-column-date: false;
-$include-ext-grid-column-number: true;
+$include-ext-grid-column-number: false;
 $include-ext-grid-column-rownumberer: false;
 $include-ext-grid-column-template: false;
 $include-ext-grid-column-widget: false;
