@@ -32,7 +32,8 @@ Ext.define('HomeAccounting.view.Main', {
 		'Ext.grid.feature.Summary',
 		'Ext.chart.CartesianChart',
 		'Ext.chart.axis.Time',
-		'Ext.chart.series.Line',
+		'Ext.chart.series.Area',
+		'Ext.chart.series.Scatter',
 		'Ext.chart.interactions.PanZoom',
 		'Ext.chart.PolarChart',
 		'Ext.chart.series.Pie',
@@ -177,7 +178,10 @@ Ext.define('HomeAccounting.view.Main', {
 							fields: [
 								'start'
 							],
-							dateFormat: 'Y-m-d',
+							label: {
+								rotationRads: 1.571
+							},
+							dateFormat: 'Y-m-d H:i:s',
 							position: 'bottom'
 						},
 						{
@@ -190,7 +194,19 @@ Ext.define('HomeAccounting.view.Main', {
 					],
 					series: [
 						{
-							type: 'line',
+							type: 'area',
+							xField: 'start',
+							yField: [
+								'total'
+							]
+						},
+						{
+							type: 'scatter',
+							tooltip: {
+								renderer: function (storeItem, item) {
+							this.setHtml(storeItem.get('merchant') + ' ' + Ext.util.Format.currency(storeItem.get('total')));
+							}
+							},
 							xField: 'start',
 							yField: [
 								'total'

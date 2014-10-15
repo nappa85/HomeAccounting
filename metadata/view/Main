@@ -456,9 +456,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "dateFormat": "Y-m-d",
+                                "dateFormat": "Y-m-d H:i:s",
                                 "fields": [
                                     "start"
+                                ],
+                                "label": [
+                                    "{",
+                                    "rotationRads: 1.571",
+                                    "}"
                                 ],
                                 "title": null
                             },
@@ -483,7 +488,7 @@
                             "designerId": "372bbb5c-9a4e-4597-878f-19dd96782f8e"
                         },
                         {
-                            "type": "Ext.chart.series.Line",
+                            "type": "Ext.chart.series.Area",
                             "reference": {
                                 "name": "series",
                                 "type": "array"
@@ -495,8 +500,31 @@
                                     "total"
                                 ]
                             },
-                            "name": "MyLineSeries2",
-                            "designerId": "8183da7c-2b2f-4273-bfb1-e021a46e17cb"
+                            "name": "MyAreaSeries",
+                            "designerId": "1728fb86-f676-45e4-80a2-1b1c1db9a863"
+                        },
+                        {
+                            "type": "Ext.chart.series.Scatter",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "tooltip": [
+                                    "{",
+                                    "renderer: function (storeItem, item) {",
+                                    "this.setHtml(storeItem.get('merchant') + ' ' + Ext.util.Format.currency(storeItem.get('total')));",
+                                    "}",
+                                    "}"
+                                ],
+                                "xField": "start",
+                                "yField": [
+                                    "total"
+                                ]
+                            },
+                            "name": "MyScatterSeries",
+                            "designerId": "45b05337-f60f-4fab-a724-f8a4adc96d96"
                         },
                         {
                             "type": "Ext.chart.interactions.PanZoom",

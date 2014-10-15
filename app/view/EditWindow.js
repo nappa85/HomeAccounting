@@ -222,7 +222,7 @@ Ext.define('HomeAccounting.view.EditWindow', {
 				timeZone: 'Europe/Rome'
 			},
 			description: Ext.JSON.encode(oValue),
-			summary: '[HomeAccounting] ' + oValue.merchant + ' ' + oValue.total
+			summary: '[HomeAccounting] ' + oValue.merchant + ' ' + Ext.util.Format.currency(oValue.total)
 		}));
 		/*Ext.Ajax.request({
 		        url: 'https://www.googleapis.com/calendar/v3/calendars/' + sCalendarId + '/events',
