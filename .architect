@@ -36,6 +36,9 @@
                                             "id": "eb409bc8-30dd-47aa-b18b-7094e5619ec8"
                                         }
                                     ]
+                                },
+                                {
+                                    "id": "01006c9a-cab3-49b2-a103-1f3f7e33b7bc"
                                 }
                             ]
                         },
@@ -111,6 +114,9 @@
                                     "id": "42ce4577-1eda-4395-b038-519ca0bcd34e"
                                 },
                                 {
+                                    "id": "d2fb3772-122d-425a-9c89-9e9ac6880601"
+                                },
+                                {
                                     "id": "7aa9e64c-372c-4cdd-921f-80dd93f0bc02"
                                 }
                             ]
@@ -129,6 +135,9 @@
                                 },
                                 {
                                     "id": "db4e1942-6c51-43fa-bc97-d73e6d872791"
+                                },
+                                {
+                                    "id": "d04e619a-8099-4e1b-9b80-538e9266b10f"
                                 }
                             ]
                         },
@@ -146,6 +155,9 @@
                                 },
                                 {
                                     "id": "275fff24-ec01-40f2-86ad-fd9295057522"
+                                },
+                                {
+                                    "id": "fa1bfe92-1005-41e0-8520-882c511a52e1"
                                 }
                             ]
                         },
@@ -163,6 +175,9 @@
                                 },
                                 {
                                     "id": "7d0c718d-c7df-4888-aaf2-def4c6208c2e"
+                                },
+                                {
+                                    "id": "43aba0f2-96fe-4401-be7d-288487c2afe6"
                                 }
                             ]
                         }
@@ -443,14 +458,16 @@
         }
     },
     "tabState": {
-        "openTabs": []
+        "openTabs": [
+            "35f89fe7-9e64-4606-b8f7-dd58bf6016ca"
+        ]
     },
     "canvasState": {
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": null,
-        "selectedInstance": null
+        "topInstance": "35f89fe7-9e64-4606-b8f7-dd58bf6016ca",
+        "selectedInstance": "35f89fe7-9e64-4606-b8f7-dd58bf6016ca"
     },
     "editMode": "code",
     "userSettings": {

@@ -1,1 +1,1 @@
-{"_comment":"Please don't edit. This is Architect data.","name":"HomeAccounting","resources":[],"requires":["sencha-charts"],"theme":"ext-theme-crisp","classpath":null,"css":[],"js":[{"path":"https://apis.google.com/js/client.js","remote":true}]}
+{"_comment":"Please don't edit. This is Architect data.","name":"HomeAccounting","resources":[],"requires":["sencha-charts"],"theme":"ext-theme-crisp-touch","classpath":null,"css":[],"js":[{"path":"https://apis.google.com/js/client.js","remote":true}]}

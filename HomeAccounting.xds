@@ -32,7 +32,7 @@
         "installStatus": "Not Installed"
     },
     "xdsVersion": "3.1.0",
-    "xdsBuild": 1903,
+    "xdsBuild": 1934,
     "schemaVersion": 1,
     "upgradeVersion": 300000000007,
     "framework": "ext50",

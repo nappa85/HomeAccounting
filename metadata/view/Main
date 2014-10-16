@@ -181,6 +181,19 @@
                                     "designerId": "eb409bc8-30dd-47aa-b18b-7094e5619ec8"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "name": "TabConfig3",
+                            "designerId": "01006c9a-cab3-49b2-a103-1f3f7e33b7bc"
                         }
                     ]
                 },
@@ -524,6 +537,9 @@
                                 ]
                             },
                             "name": "MyScatterSeries",
+                            "configAlternates": {
+                                "highlight": "boolean"
+                            },
                             "designerId": "45b05337-f60f-4fab-a724-f8a4adc96d96"
                         },
                         {
@@ -535,6 +551,16 @@
                             "codeClass": null,
                             "name": "MyPanZoomInteraction1",
                             "designerId": "42ce4577-1eda-4395-b038-519ca0bcd34e"
+                        },
+                        {
+                            "type": "Ext.chart.interactions.ItemHighlight",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyItemHighlightInteraction",
+                            "designerId": "d2fb3772-122d-425a-9c89-9e9ac6880601"
                         },
                         {
                             "type": "Ext.tab.Tab",
@@ -576,6 +602,13 @@
                             "userConfig": {
                                 "label": [
                                     "{'field':'name','display':'rotate','contrast':true,'font':'12px Arial'}"
+                                ],
+                                "tooltip": [
+                                    "{",
+                                    "renderer: function(storeItem, item) {",
+                                    "this.setHtml(Ext.util.Format.currency(storeItem.get('total')));",
+                                    "}",
+                                    "}"
                                 ],
                                 "xField": "total"
                             },
@@ -622,6 +655,16 @@
                                     "type": "string"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.chart.interactions.ItemHighlight",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyItemHighlightInteraction1",
+                            "designerId": "d04e619a-8099-4e1b-9b80-538e9266b10f"
                         }
                     ]
                 },
@@ -653,6 +696,13 @@
                             "userConfig": {
                                 "label": [
                                     "{'field':'name','display':'rotate','contrast':true,'font':'12px Arial'}"
+                                ],
+                                "tooltip": [
+                                    "{",
+                                    "renderer: function(storeItem, item) {",
+                                    "this.setHtml(Ext.util.Format.currency(storeItem.get('total')));",
+                                    "}",
+                                    "}"
                                 ],
                                 "xField": "total"
                             },
@@ -699,6 +749,16 @@
                                     "type": "string"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.chart.interactions.ItemHighlight",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyItemHighlightInteraction2",
+                            "designerId": "fa1bfe92-1005-41e0-8520-882c511a52e1"
                         }
                     ]
                 },
@@ -730,6 +790,13 @@
                             "userConfig": {
                                 "label": [
                                     "{'field':'name','display':'rotate','contrast':true,'font':'12px Arial'}"
+                                ],
+                                "tooltip": [
+                                    "{",
+                                    "renderer: function(storeItem, item) {",
+                                    "this.setHtml(Ext.util.Format.currency(storeItem.get('total')));",
+                                    "}",
+                                    "}"
                                 ],
                                 "xField": "total"
                             },
@@ -776,6 +843,16 @@
                                     "type": "string"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.chart.interactions.ItemHighlight",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyItemHighlightInteraction3",
+                            "designerId": "43aba0f2-96fe-4401-be7d-288487c2afe6"
                         }
                     ]
                 }

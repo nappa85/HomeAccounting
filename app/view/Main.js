@@ -25,16 +25,17 @@ Ext.define('HomeAccounting.view.Main', {
 		'Ext.form.field.ComboBox',
 		'Ext.toolbar.Fill',
 		'Ext.form.field.Date',
+		'Ext.tab.Tab',
 		'Ext.grid.Panel',
 		'Ext.grid.View',
 		'Ext.grid.column.Column',
-		'Ext.tab.Tab',
 		'Ext.grid.feature.Summary',
 		'Ext.chart.CartesianChart',
 		'Ext.chart.axis.Time',
 		'Ext.chart.series.Area',
 		'Ext.chart.series.Scatter',
 		'Ext.chart.interactions.PanZoom',
+		'Ext.chart.interactions.ItemHighlight',
 		'Ext.chart.PolarChart',
 		'Ext.chart.series.Pie',
 		'Ext.chart.series.sprite.PieSlice',
@@ -216,6 +217,9 @@ Ext.define('HomeAccounting.view.Main', {
 					interactions: [
 						{
 							type: 'panzoom'
+						},
+						{
+							type: 'itemhighlight'
 						}
 					]
 				},
@@ -232,12 +236,20 @@ Ext.define('HomeAccounting.view.Main', {
 								contrast: true,
 								font: '12px Arial'
 							},
+							tooltip: {
+								renderer: function(storeItem, item) {
+							this.setHtml(Ext.util.Format.currency(storeItem.get('total')));
+							}
+							},
 							xField: 'total'
 						}
 					],
 					interactions: [
 						{
 							type: 'rotate'
+						},
+						{
+							type: 'itemhighlight'
 						}
 					],
 					legend: {
@@ -258,12 +270,20 @@ Ext.define('HomeAccounting.view.Main', {
 								contrast: true,
 								font: '12px Arial'
 							},
+							tooltip: {
+								renderer: function(storeItem, item) {
+							this.setHtml(Ext.util.Format.currency(storeItem.get('total')));
+							}
+							},
 							xField: 'total'
 						}
 					],
 					interactions: [
 						{
 							type: 'rotate'
+						},
+						{
+							type: 'itemhighlight'
 						}
 					],
 					legend: {
@@ -284,12 +304,20 @@ Ext.define('HomeAccounting.view.Main', {
 								contrast: true,
 								font: '12px Arial'
 							},
+							tooltip: {
+								renderer: function(storeItem, item) {
+							this.setHtml(Ext.util.Format.currency(storeItem.get('total')));
+							}
+							},
 							xField: 'total'
 						}
 					],
 					interactions: [
 						{
 							type: 'rotate'
+						},
+						{
+							type: 'itemhighlight'
 						}
 					],
 					legend: {
