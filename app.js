@@ -52,7 +52,7 @@ Ext.application({
 		Ext.util.Format.thousandSeparator = '.';
 
 		Ext.ComponentQuery.query('#startDate')[0].setValue(new Date(y, m, 1));
-		Ext.ComponentQuery.query('#endDate')[0].setValue(new Date(y, m + 1, 0));
+		Ext.ComponentQuery.query('#endDate')[0].setValue(new Date(y, m + 1, 0, 23, 59, 59));
 
 		gapi.load('auth', function() {
 			gapi.auth.authorize({
