@@ -118,7 +118,9 @@ Ext.define('HomeAccounting.view.Main', {
 									xtype: 'button',
 									handler: function(button, e) {
 										if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId')[0].getValue())) {
-											Ext.create('HomeAccounting.view.EditWindow').loadRecord();
+											var oWindow = Ext.create('HomeAccounting.view.EditWindow');
+											oWindow.loadRecord();
+											oWindow.show();
 										}
 									},
 									text: 'Add New'

@@ -32,7 +32,6 @@ Ext.define('HomeAccounting.view.EditWindow', {
 		type: 'editwindow'
 	},
 	autoScroll: true,
-	autoShow: true,
 	layout: 'anchor',
 	bodyPadding: 10,
 	title: 'Add Event',

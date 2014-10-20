@@ -42,7 +42,9 @@
                         ],
                         "fn": "handler",
                         "implHandler": [
-                            "Ext.create('HomeAccounting.view.EditWindow').loadRecord(this.parentMenu.record);"
+                            "var oWindow = Ext.create('HomeAccounting.view.EditWindow');",
+                            "oWindow.loadRecord(this.parentMenu.record);",
+                            "oWindow.show();"
                         ]
                     },
                     "name": "handler",

@@ -264,7 +264,9 @@
                                                 "fn": "handler",
                                                 "implHandler": [
                                                     "if(!Ext.isEmpty(Ext.ComponentQuery.query('#calendarId')[0].getValue())) {",
-                                                    "    Ext.create('HomeAccounting.view.EditWindow').loadRecord();",
+                                                    "    var oWindow = Ext.create('HomeAccounting.view.EditWindow');",
+                                                    "\toWindow.loadRecord();",
+                                                    "\toWindow.show();",
                                                     "}"
                                                 ]
                                             },

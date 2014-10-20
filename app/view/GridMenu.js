@@ -31,7 +31,9 @@ Ext.define('HomeAccounting.view.GridMenu', {
 		{
 			xtype: 'menuitem',
 			handler: function(item, e) {
-				Ext.create('HomeAccounting.view.EditWindow').loadRecord(this.parentMenu.record);
+				var oWindow = Ext.create('HomeAccounting.view.EditWindow');
+				oWindow.loadRecord(this.parentMenu.record);
+				oWindow.show();
 			},
 			text: 'Edit'
 		},

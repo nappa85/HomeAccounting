@@ -1,7 +1,6 @@
 {
     "webBuild": {
         "environment": "production",
-        "clean": "on",
         "publishPath": "C:/Users/m.napetti/Documents/Architect3/gh-pages"
     }
 }
