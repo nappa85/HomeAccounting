@@ -14,7 +14,7 @@
                 "width": null
             }
         },
-        "urlPrefix": "http://localhost:1841",
+        "urlPrefix": "http://localhost/HomeAccounting/",
         "exportPath": "",
         "spacesToIndent": "tab",
         "sdkPath": "",

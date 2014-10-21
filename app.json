@@ -4,7 +4,7 @@
    "classpath": "${app.dir}/app",
    "overrides": "${app.dir}/overrides",
    "framework": "ext",
-   "theme": "ext-theme-crisp",
+   "theme": "ext-theme-crisp-touch",
    "requires": [
       "sencha-charts"
    ],

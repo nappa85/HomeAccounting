@@ -396,7 +396,9 @@
                             "userConfig": {
                                 "fn": "onGridpanelItemDblClick",
                                 "implHandler": [
-                                    "Ext.create('HomeAccounting.view.EditWindow').loadRecord(record);"
+                                    "var oWindow = Ext.create('HomeAccounting.view.EditWindow');",
+                                    "oWindow.loadRecord(record);",
+                                    "oWindow.show();"
                                 ],
                                 "name": "itemdblclick",
                                 "scope": "me"

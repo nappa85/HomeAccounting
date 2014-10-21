@@ -344,7 +344,9 @@ Ext.define('HomeAccounting.view.Main', {
 	},
 
 	onGridpanelItemDblClick: function(dataview, record, item, index, e, eOpts) {
-		Ext.create('HomeAccounting.view.EditWindow').loadRecord(record);
+		var oWindow = Ext.create('HomeAccounting.view.EditWindow');
+		oWindow.loadRecord(record);
+		oWindow.show();
 	},
 
 	onGridpanelItemContextMenu: function(dataview, record, item, index, e, eOpts) {
