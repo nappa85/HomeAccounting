@@ -51,6 +51,8 @@ Ext.application({
 		Ext.util.Format.decimalSeparator = ',';
 		Ext.util.Format.thousandSeparator = '.';
 
+		sActualTimeZone = null;
+
 		Ext.ComponentQuery.query('#startDate')[0].setValue(new Date(y, m, 1));
 		Ext.ComponentQuery.query('#endDate')[0].setValue(new Date(y, m + 1, 0, 23, 59, 59));
 

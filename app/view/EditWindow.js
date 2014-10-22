@@ -214,11 +214,11 @@ Ext.define('HomeAccounting.view.EditWindow', {
 		xhr.send(Ext.JSON.encode({
 			end: {
 				dateTime: oValue.date + 'T' + oValue.time,
-				timeZone: 'Europe/Rome'
+				timeZone: sActualTimeZone
 			},
 			start: {
 				dateTime: oValue.date + 'T' + oValue.time,
-				timeZone: 'Europe/Rome'
+				timeZone: sActualTimeZone
 			},
 			description: Ext.JSON.encode(oValue),
 			summary: '[HomeAccounting] ' + oValue.merchant + ' ' + Ext.util.Format.currency(oValue.total)

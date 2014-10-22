@@ -36,7 +36,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "rootProperty": "items"
+                        "rootProperty": "items",
+                        "transform": [
+                            "{fn: function(data) { sActualTimeZone = data.timeZone; return data;}}"
+                        ]
                     },
                     "name": "MyJsonReader1",
                     "designerId": "397fdb6f-6af0-488e-b15a-c7ab3e5b4b48"

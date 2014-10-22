@@ -458,14 +458,18 @@
         }
     },
     "tabState": {
-        "openTabs": []
+        "openTabs": [
+            "4a0cbe03-7d5c-458c-bc6b-bca9880c7116",
+            "application",
+            "4ac40039-e2bf-47c3-954e-e3c412a37af1"
+        ]
     },
     "canvasState": {
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "b0b0e426-baed-4569-a060-4c3a29962806",
-        "selectedInstance": "b0b0e426-baed-4569-a060-4c3a29962806"
+        "topInstance": "application",
+        "selectedInstance": "303592fe-0558-426a-8bce-570a68c673d8"
     },
     "editMode": "code",
     "userSettings": {

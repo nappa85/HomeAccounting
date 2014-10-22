@@ -36,7 +36,10 @@ Ext.define('HomeAccounting.store.Events', {
 				},
 				reader: {
 					type: 'json',
-					rootProperty: 'items'
+					rootProperty: 'items',
+					transform: {
+						fn: function(data) { sActualTimeZone = data.timeZone; return data;}
+					}
 				}
 			},
 			listeners: {
