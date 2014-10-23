@@ -17,7 +17,8 @@ Ext.define('HomeAccounting.store.Merchants', {
 	extend: 'Ext.data.Store',
 
 	requires: [
-		'HomeAccounting.model.Generic'
+		'HomeAccounting.model.Generic',
+		'Ext.util.Sorter'
 	],
 
 	constructor: function(cfg) {
@@ -25,7 +26,10 @@ Ext.define('HomeAccounting.store.Merchants', {
 		cfg = cfg || {};
 		me.callParent([Ext.apply({
 			storeId: 'Merchants',
-			model: 'HomeAccounting.model.Generic'
+			model: 'HomeAccounting.model.Generic',
+			sorters: {
+				property: 'name'
+			}
 		}, cfg)]);
 	}
 });

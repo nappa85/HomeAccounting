@@ -52,7 +52,7 @@
             "userConfig": {
                 "allowBlank": false,
                 "allowOnlyWhitespace": false,
-                "displayField": null,
+                "displayField": "name",
                 "fieldLabel": "Merchant",
                 "layout|anchor": "100%",
                 "name": "merchant",
@@ -60,7 +60,7 @@
                 "store": "Merchants",
                 "tabIndex": null,
                 "typeAhead": true,
-                "valueField": null
+                "valueField": "name"
             },
             "name": "MyComboBox1",
             "designerId": "80140b13-a72c-408a-a4cb-b40f4b16c23a"
@@ -146,6 +146,7 @@
                             "userConfig": {
                                 "fieldLabel": "Item",
                                 "layout|flex": 2,
+                                "minWidth": 100,
                                 "value": null
                             },
                             "name": "MyDisplayField2",
@@ -161,6 +162,7 @@
                             "userConfig": {
                                 "fieldLabel": "Tag",
                                 "layout|flex": 2,
+                                "minWidth": 100,
                                 "value": null
                             },
                             "name": "MyDisplayField1",
@@ -176,6 +178,7 @@
                             "userConfig": {
                                 "fieldLabel": "Number",
                                 "layout|flex": 1,
+                                "minWidth": 100,
                                 "value": null
                             },
                             "name": "MyDisplayField",
@@ -191,6 +194,7 @@
                             "userConfig": {
                                 "fieldLabel": "Price",
                                 "layout|flex": 1,
+                                "minWidth": 100,
                                 "value": null
                             },
                             "name": "MyDisplayField3",

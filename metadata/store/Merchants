@@ -11,5 +11,20 @@
         "storeId": "Merchants"
     },
     "name": "MyArrayStore",
-    "designerId": "47b6dcb6-b2e3-4c38-b20f-eb5e892f906b"
+    "designerId": "47b6dcb6-b2e3-4c38-b20f-eb5e892f906b",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "name"
+            },
+            "name": "MySorter2",
+            "designerId": "70dd901d-86f2-4bda-9e2c-0d2dd8b1aac1"
+        }
+    ]
 }

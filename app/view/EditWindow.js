@@ -50,9 +50,11 @@ Ext.define('HomeAccounting.view.EditWindow', {
 			name: 'merchant',
 			allowBlank: false,
 			allowOnlyWhitespace: false,
+			displayField: 'name',
 			queryMode: 'local',
 			store: 'Merchants',
-			typeAhead: true
+			typeAhead: true,
+			valueField: 'name'
 		},
 		{
 			xtype: 'datefield',
@@ -88,21 +90,25 @@ Ext.define('HomeAccounting.view.EditWindow', {
 						{
 							xtype: 'displayfield',
 							flex: 2,
+							minWidth: 100,
 							fieldLabel: 'Item'
 						},
 						{
 							xtype: 'displayfield',
 							flex: 2,
+							minWidth: 100,
 							fieldLabel: 'Tag'
 						},
 						{
 							xtype: 'displayfield',
 							flex: 1,
+							minWidth: 100,
 							fieldLabel: 'Number'
 						},
 						{
 							xtype: 'displayfield',
 							flex: 1,
+							minWidth: 100,
 							fieldLabel: 'Price'
 						},
 						{
