@@ -8,6 +8,7 @@
     "userConfig": {
         "designer|userClassName": "Events",
         "model": "Event",
+        "pageSize": 2500,
         "storeId": "Events"
     },
     "name": "MyJsonPStore",
@@ -23,12 +24,12 @@
             "userConfig": {
                 "extraParams": [
                     "{",
-                    "maxResults: 2500,",
                     "orderBy: 'startTime',",
                     "q:'[HomeAccounting]',",
-                    "singleEvents: 1",
+                    "singleEvents: true",
                     "}"
-                ]
+                ],
+                "limitParam": "maxResults"
             },
             "name": "MyJsonPProxy1",
             "designerId": "0101375d-19a7-4cde-9779-aa612a6ba7a9",
@@ -63,8 +64,8 @@
                 "implHandler": [
                     "var oProxy = this.getProxy();",
                     "",
-                    "oProxy.extraParams.timeMin = Ext.ComponentQuery.query('#startDate')[0].getSubmitValue();",
-                    "oProxy.extraParams.timeMax = Ext.ComponentQuery.query('#endDate')[0].getSubmitValue();",
+                    "oProxy.extraParams.timeMin = Ext.ComponentQuery.query('#startDate')[0].getSubmitValue() + 'T00:00:00.000Z';",
+                    "oProxy.extraParams.timeMax = Ext.ComponentQuery.query('#endDate')[0].getSubmitValue() + 'T23:59:59.000Z';",
                     "",
                     "Ext.data.StoreManager.get('Merchants').removeAll();",
                     "Ext.data.StoreManager.get('Items').removeAll();",

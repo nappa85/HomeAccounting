@@ -45,7 +45,10 @@ Ext.define('HomeAccounting.model.Generic', {
 	],
 
 	getHint: function() {
-		return 'Total: ' + Ext.util.Format.currency(this.get('total')) + '<br />Count: ' + this.get('count') + '<br />Min: ' + this.get('min') + '<br />Max: ' + this.get('max');
+		return 'Total: ' + Ext.util.Format.currency(this.get('total')) +
+			'<br />Count: ' + Ext.util.Format.number(this.get('count'), '0.###') +
+			'<br />Min: ' + Ext.util.Format.currency(this.get('min')) +
+			'<br />Max: ' + Ext.util.Format.currency(this.get('max'));
 	}
 
 });

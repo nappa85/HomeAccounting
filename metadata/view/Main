@@ -115,7 +115,7 @@
                                 "itemId": "startDate",
                                 "layout|flex": null,
                                 "name": "startDate",
-                                "submitFormat": "c"
+                                "submitFormat": "Y-m-d"
                             },
                             "name": "MyDateField1",
                             "designerId": "44358953-76cc-4563-ae98-19ccbc6a5757",
@@ -155,7 +155,7 @@
                                 "itemId": "endDate",
                                 "layout|flex": null,
                                 "name": "endDate",
-                                "submitFormat": "c"
+                                "submitFormat": "Y-m-d"
                             },
                             "name": "MyDateField2",
                             "designerId": "9788a1ab-bf97-484d-b714-ffec6972080f",
@@ -610,6 +610,7 @@
                                 "tooltip": [
                                     "{",
                                     "renderer: function(storeItem, item) {",
+                                    "this.setTitle(storeItem.get('name'));",
                                     "this.setHtml(storeItem.getHint());",
                                     "}",
                                     "}"
@@ -704,6 +705,7 @@
                                 "tooltip": [
                                     "{",
                                     "renderer: function(storeItem, item) {",
+                                    "this.setTitle(storeItem.get('name'));",
                                     "this.setHtml(storeItem.getHint());",
                                     "}",
                                     "}"
@@ -798,6 +800,7 @@
                                 "tooltip": [
                                     "{",
                                     "renderer: function(storeItem, item) {",
+                                    "this.setTitle(storeItem.get('name'));",
                                     "this.setHtml(storeItem.getHint());",
                                     "}",
                                     "}"

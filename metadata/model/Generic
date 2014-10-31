@@ -86,7 +86,10 @@
             "userConfig": {
                 "fn": "getHint",
                 "implHandler": [
-                    "return 'Total: ' + Ext.util.Format.currency(this.get('total')) + '<br />Count: ' + this.get('count') + '<br />Min: ' + this.get('min') + '<br />Max: ' + this.get('max');"
+                    "return 'Total: ' + Ext.util.Format.currency(this.get('total')) +",
+                    "\t'<br />Count: ' + Ext.util.Format.number(this.get('count'), '0.###') +",
+                    "\t'<br />Min: ' + Ext.util.Format.currency(this.get('min')) +",
+                    "\t'<br />Max: ' + Ext.util.Format.currency(this.get('max'));"
                 ]
             },
             "name": "getHint",

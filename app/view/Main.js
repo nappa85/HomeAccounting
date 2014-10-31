@@ -84,7 +84,7 @@ Ext.define('HomeAccounting.view.Main', {
 							fieldLabel: 'Start',
 							name: 'startDate',
 							format: 'Y-m-d',
-							submitFormat: 'c',
+							submitFormat: 'Y-m-d',
 							listeners: {
 								change: 'onStartDateChange'
 							}
@@ -95,7 +95,7 @@ Ext.define('HomeAccounting.view.Main', {
 							fieldLabel: 'End',
 							name: 'endDate',
 							format: 'Y-m-d',
-							submitFormat: 'c',
+							submitFormat: 'Y-m-d',
 							listeners: {
 								change: 'onEndDateChange'
 							}
@@ -240,6 +240,7 @@ Ext.define('HomeAccounting.view.Main', {
 							},
 							tooltip: {
 								renderer: function(storeItem, item) {
+							this.setTitle(storeItem.get('name'));
 							this.setHtml(storeItem.getHint());
 							}
 							},
@@ -274,6 +275,7 @@ Ext.define('HomeAccounting.view.Main', {
 							},
 							tooltip: {
 								renderer: function(storeItem, item) {
+							this.setTitle(storeItem.get('name'));
 							this.setHtml(storeItem.getHint());
 							}
 							},
@@ -308,6 +310,7 @@ Ext.define('HomeAccounting.view.Main', {
 							},
 							tooltip: {
 								renderer: function(storeItem, item) {
+							this.setTitle(storeItem.get('name'));
 							this.setHtml(storeItem.getHint());
 							}
 							},

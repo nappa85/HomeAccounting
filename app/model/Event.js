@@ -46,7 +46,8 @@ Ext.define('HomeAccounting.model.Event', {
 					oItems = Ext.data.StoreManager.get('Items'),
 					oTags = Ext.data.StoreManager.get('Tags'),
 					i = 0,
-					oGeneric;
+					oGeneric,
+					fTotal;
 
 				try {
 					Ext.apply(rec.data, Ext.JSON.decode(v, true));
@@ -73,18 +74,20 @@ Ext.define('HomeAccounting.model.Event', {
 					}
 
 					for(; i < rec.data.rows.length; i++) {
+						fTotal = (rec.data.rows[i].number * rec.data.rows[i].price);
+
 						oGeneric = oItems.findRecord('name', rec.data.rows[i].item.trim(), 0, false, false, true);
 						if(oGeneric === null) {
 							oItems.add({
 								name: rec.data.rows[i].item.trim(),
-								total: (rec.data.rows[i].number * rec.data.rows[i].price),
+								total: fTotal,
 								count: rec.data.rows[i].number,
 								min: rec.data.rows[i].price,
 								max: rec.data.rows[i].price
 							});
 						}
 						else {
-							oGeneric.set('total', oGeneric.get('total') + (rec.data.rows[i].number * rec.data.rows[i].price));
+							oGeneric.set('total', oGeneric.get('total') + fTotal);
 							oGeneric.set('count', oGeneric.get('count') + rec.data.rows[i].number);
 							if(oGeneric.get('min') > rec.data.rows[i].price) {
 								oGeneric.set('min', rec.data.rows[i].price);
@@ -101,18 +104,18 @@ Ext.define('HomeAccounting.model.Event', {
 									name: rec.data.rows[i].tag.trim(),
 									total: (rec.data.rows[i].number * rec.data.rows[i].price),
 									count: rec.data.rows[i].number,
-									min: rec.data.rows[i].price,
-									max: rec.data.rows[i].price
+									min: fTotal,
+									max: fTotal
 								});
 							}
 							else {
-								oGeneric.set('total', oGeneric.get('total') + (rec.data.rows[i].number * rec.data.rows[i].price));
-								oGeneric.set('count', oGeneric.get('count') + rec.data.rows[i].number);
-								if(oGeneric.get('min') > rec.data.rows[i].price) {
-									oGeneric.set('min', rec.data.rows[i].price);
+								oGeneric.set('total', oGeneric.get('total') + fTotal);
+								oGeneric.set('count', oGeneric.get('count') + 1);
+								if(oGeneric.get('min') > fTotal) {
+									oGeneric.set('min', fTotal);
 								}
-								if(oGeneric.get('max') < rec.data.rows[i].price) {
-									oGeneric.set('max', rec.data.rows[i].price);
+								if(oGeneric.get('max') < fTotal) {
+									oGeneric.set('max', fTotal);
 								}
 							}
 						}

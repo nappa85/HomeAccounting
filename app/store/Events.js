@@ -26,16 +26,17 @@ Ext.define('HomeAccounting.store.Events', {
 		var me = this;
 		cfg = cfg || {};
 		me.callParent([Ext.apply({
+			pageSize: 2500,
 			storeId: 'Events',
 			model: 'HomeAccounting.model.Event',
 			proxy: {
 				type: 'jsonp',
 				extraParams: {
-					maxResults: 2500,
 					orderBy: 'startTime',
 					q: '[HomeAccounting]',
-					singleEvents: 1
+					singleEvents: true
 				},
+				limitParam: 'maxResults',
 				reader: {
 					type: 'json',
 					rootProperty: 'items',
@@ -56,8 +57,8 @@ Ext.define('HomeAccounting.store.Events', {
 	onJsonpstoreBeforeLoad: function(store, operation, eOpts) {
 		var oProxy = this.getProxy();
 
-		oProxy.extraParams.timeMin = Ext.ComponentQuery.query('#startDate')[0].getSubmitValue();
-		oProxy.extraParams.timeMax = Ext.ComponentQuery.query('#endDate')[0].getSubmitValue();
+		oProxy.extraParams.timeMin = Ext.ComponentQuery.query('#startDate')[0].getSubmitValue() + 'T00:00:00.000Z';
+		oProxy.extraParams.timeMax = Ext.ComponentQuery.query('#endDate')[0].getSubmitValue() + 'T23:59:59.000Z';
 
 		Ext.data.StoreManager.get('Merchants').removeAll();
 		Ext.data.StoreManager.get('Items').removeAll();
