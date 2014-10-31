@@ -51,30 +51,69 @@ Ext.define('HomeAccounting.model.Event', {
 				try {
 					Ext.apply(rec.data, Ext.JSON.decode(v, true));
 
-					oGeneric = oMerchants.findRecord('name', rec.data.merchant, 0, false, false, true);
+					oGeneric = oMerchants.findRecord('name', rec.data.merchant.trim(), 0, false, false, true);
 					if(oGeneric === null) {
-						oMerchants.add({name: rec.data.merchant, total: rec.data.total});
+						oMerchants.add({
+							name: rec.data.merchant.trim(),
+							total: rec.data.total,
+							count: 1,
+							min: rec.data.total,
+							max: rec.data.total
+						});
 					}
 					else {
 						oGeneric.set('total', oGeneric.get('total') + rec.data.total);
+						oGeneric.set('count', oGeneric.get('count') + 1);
+						if(oGeneric.get('min') > rec.data.total) {
+							oGeneric.set('min', rec.data.total);
+						}
+						if(oGeneric.get('max') < rec.data.total) {
+							oGeneric.set('max', rec.data.total);
+						}
 					}
 
 					for(; i < rec.data.rows.length; i++) {
-						oGeneric = oItems.findRecord('name', rec.data.rows[i].item, 0, false, false, true);
+						oGeneric = oItems.findRecord('name', rec.data.rows[i].item.trim(), 0, false, false, true);
 						if(oGeneric === null) {
-							oItems.add({name: rec.data.rows[i].item, total: (rec.data.rows[i].number * rec.data.rows[i].price)});
+							oItems.add({
+								name: rec.data.rows[i].item.trim(),
+								total: (rec.data.rows[i].number * rec.data.rows[i].price),
+								count: rec.data.rows[i].number,
+								min: rec.data.rows[i].price,
+								max: rec.data.rows[i].price
+							});
 						}
 						else {
 							oGeneric.set('total', oGeneric.get('total') + (rec.data.rows[i].number * rec.data.rows[i].price));
+							oGeneric.set('count', oGeneric.get('count') + rec.data.rows[i].number);
+							if(oGeneric.get('min') > rec.data.rows[i].price) {
+								oGeneric.set('min', rec.data.rows[i].price);
+							}
+							if(oGeneric.get('max') < rec.data.rows[i].price) {
+								oGeneric.set('max', rec.data.rows[i].price);
+							}
 						}
 
 						if(!Ext.isEmpty(rec.data.rows[i].tag)) {
-							oGeneric = oTags.findRecord('name', rec.data.rows[i].tag, 0, false, false, true);
+							oGeneric = oTags.findRecord('name', rec.data.rows[i].tag.trim(), 0, false, false, true);
 							if(oGeneric === null) {
-								oTags.add({name: rec.data.rows[i].tag, total: (rec.data.rows[i].number * rec.data.rows[i].price)});
+								oTags.add({
+									name: rec.data.rows[i].tag.trim(),
+									total: (rec.data.rows[i].number * rec.data.rows[i].price),
+									count: rec.data.rows[i].number,
+									min: rec.data.rows[i].price,
+									max: rec.data.rows[i].price
+								});
 							}
 							else {
 								oGeneric.set('total', oGeneric.get('total') + (rec.data.rows[i].number * rec.data.rows[i].price));
+								oGeneric.set('count', oGeneric.get('count') + rec.data.rows[i].number);
+								if(oGeneric.get('min') > rec.data.rows[i].price) {
+									oGeneric.set('min', rec.data.rows[i].price);
+								}
+								if(oGeneric.get('max') < rec.data.rows[i].price) {
+									oGeneric.set('max', rec.data.rows[i].price);
+								}
 							}
 						}
 					}

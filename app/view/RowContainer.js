@@ -73,6 +73,7 @@ Ext.define('HomeAccounting.view.RowContainer', {
 			allowBlank: false,
 			allowOnlyWhitespace: false,
 			allowExponential: false,
+			decimalPrecision: 3,
 			listeners: {
 				change: 'onNumberfieldChange'
 			}
@@ -85,6 +86,7 @@ Ext.define('HomeAccounting.view.RowContainer', {
 			allowBlank: false,
 			allowOnlyWhitespace: false,
 			allowExponential: false,
+			decimalPrecision: 3,
 			listeners: {
 				change: 'onNumberfieldChange1'
 			}

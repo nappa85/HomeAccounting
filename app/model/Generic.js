@@ -29,6 +29,23 @@ Ext.define('HomeAccounting.model.Generic', {
 		{
 			type: 'float',
 			name: 'total'
+		},
+		{
+			type: 'float',
+			name: 'count'
+		},
+		{
+			type: 'float',
+			name: 'min'
+		},
+		{
+			type: 'float',
+			name: 'max'
 		}
-	]
+	],
+
+	getHint: function() {
+		return 'Total: ' + Ext.util.Format.currency(this.get('total')) + '<br />Count: ' + this.get('count') + '<br />Min: ' + this.get('min') + '<br />Max: ' + this.get('max');
+	}
+
 });

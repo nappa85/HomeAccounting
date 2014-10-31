@@ -36,6 +36,61 @@
             },
             "name": "MyNumber1",
             "designerId": "e810177b-d27a-4cef-beeb-dfa1866c5f10"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "count"
+            },
+            "name": "MyNumber5",
+            "designerId": "54009f49-e04b-4827-a69a-c8c9009904bc"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "min"
+            },
+            "name": "MyNumber2",
+            "designerId": "4c78a57d-86cd-43ad-a34b-5f8b609dba45"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "max"
+            },
+            "name": "MyNumber3",
+            "designerId": "86de5d07-b472-4314-bc1a-016138393c53"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getHint",
+                "implHandler": [
+                    "return 'Total: ' + Ext.util.Format.currency(this.get('total')) + '<br />Count: ' + this.get('count') + '<br />Min: ' + this.get('min') + '<br />Max: ' + this.get('max');"
+                ]
+            },
+            "name": "getHint",
+            "designerId": "4a8b484f-daa8-468d-a25e-9024823e12c3"
         }
     ]
 }

@@ -19,8 +19,7 @@ Ext.define('HomeAccounting.store.Events', {
 	requires: [
 		'HomeAccounting.model.Event',
 		'Ext.data.proxy.JsonP',
-		'Ext.data.reader.Json',
-		'Ext.util.Sorter'
+		'Ext.data.reader.Json'
 	],
 
 	constructor: function(cfg) {
@@ -32,7 +31,10 @@ Ext.define('HomeAccounting.store.Events', {
 			proxy: {
 				type: 'jsonp',
 				extraParams: {
-					q: '[HomeAccounting]'
+					maxResults: 2500,
+					orderBy: 'startTime',
+					q: '[HomeAccounting]',
+					singleEvents: 1
 				},
 				reader: {
 					type: 'json',
@@ -47,9 +49,6 @@ Ext.define('HomeAccounting.store.Events', {
 					fn: me.onJsonpstoreBeforeLoad,
 					scope: me
 				}
-			},
-			sorters: {
-				property: 'start'
 			}
 		}, cfg)]);
 	},

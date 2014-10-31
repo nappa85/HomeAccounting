@@ -240,7 +240,7 @@ Ext.define('HomeAccounting.view.Main', {
 							},
 							tooltip: {
 								renderer: function(storeItem, item) {
-							this.setHtml(Ext.util.Format.currency(storeItem.get('total')));
+							this.setHtml(storeItem.getHint());
 							}
 							},
 							xField: 'total'
@@ -274,7 +274,7 @@ Ext.define('HomeAccounting.view.Main', {
 							},
 							tooltip: {
 								renderer: function(storeItem, item) {
-							this.setHtml(Ext.util.Format.currency(storeItem.get('total')));
+							this.setHtml(storeItem.getHint());
 							}
 							},
 							xField: 'total'
@@ -308,7 +308,7 @@ Ext.define('HomeAccounting.view.Main', {
 							},
 							tooltip: {
 								renderer: function(storeItem, item) {
-							this.setHtml(Ext.util.Format.currency(storeItem.get('total')));
+							this.setHtml(storeItem.getHint());
 							}
 							},
 							xField: 'total'

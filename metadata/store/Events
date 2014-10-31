@@ -22,7 +22,12 @@
             "codeClass": null,
             "userConfig": {
                 "extraParams": [
-                    "{q:'[HomeAccounting]'}"
+                    "{",
+                    "maxResults: 2500,",
+                    "orderBy: 'startTime',",
+                    "q:'[HomeAccounting]',",
+                    "singleEvents: 1",
+                    "}"
                 ]
             },
             "name": "MyJsonPProxy1",
@@ -70,19 +75,6 @@
             },
             "name": "onJsonpstoreBeforeLoad",
             "designerId": "8a89e10f-8a39-416d-a21d-15dee8e084f6"
-        },
-        {
-            "type": "Ext.util.Sorter",
-            "reference": {
-                "name": "sorters",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "property": "start"
-            },
-            "name": "MySorter",
-            "designerId": "e5631533-db94-4cdf-8a13-d65d4dffb442"
         }
     ]
 }
