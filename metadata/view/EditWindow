@@ -9,7 +9,7 @@
         "autoScroll": true,
         "autoShow": null,
         "bodyPadding": 10,
-        "constrainHeader": true,
+        "constrainHeader": null,
         "designer|userAlias": "editwindow",
         "designer|userClassName": "EditWindow",
         "height": null,
