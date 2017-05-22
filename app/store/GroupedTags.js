@@ -1,0 +1,34 @@
+
+Ext.define('HomeAccounting.store.GroupedTags', {
+	extend: 'Ext.data.ChainedStore',
+
+    storeId: 'GroupedTags',
+    source: 'EventRows',
+    grouper: {
+        groupFn: function(oRecord) {
+            return oRecord.get('tag').toLowerCase().trim();
+        }
+    },
+    listeners: {
+        datachanged: Ext.Function.createBuffered(function(oStore) {
+            try {
+                var oTags = Ext.getStore('Tags') || Ext.create('HomeAccounting.store.Tags');
+                oTags.removeAll();
+                oStore.getGroups().each(function(oGroup) {
+                    oTags.add({
+                        name: oGroup.getGroupKey(),
+                        total: oGroup.sum('total'),
+                        count: oGroup.count(),
+                        min: oGroup.min('total'),
+                        max: oGroup.max('total')
+                    })
+                });
+            }
+            catch(e) {
+                if(console && console.log) {
+                    console.log(e);
+                }
+            }
+        }, 100)
+    }
+});
