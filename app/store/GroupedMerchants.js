@@ -14,7 +14,6 @@ Ext.define('HomeAccounting.store.GroupedMerchants', {
 	},
 	listeners: {
 		datachanged: Ext.Function.createBuffered(function(oStore) {
-			var oStart = new Date();
 			try {
 				var oMerchants = Ext.getStore('Merchants') || Ext.create('HomeAccounting.store.Merchants');
 					aMerchants = [];
@@ -37,7 +36,6 @@ Ext.define('HomeAccounting.store.GroupedMerchants', {
 					console.log(e);
 				}
 			}
-			console.log('HomeAccounting.store.GroupedMerchants.datachanged ' + Ext.Date.diff(oStart, new Date, Ext.Date.MILLI));
 		}, 100)
 	}
 });
