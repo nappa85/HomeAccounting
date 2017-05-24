@@ -30,7 +30,7 @@ Ext.define('HomeAccounting.store.GroupedTags', {
                     console.log(e);
                 }
             }
-            console.log('HomeAccounting.store.GroupedTags.datachanged '.Ext.Date.diff(oStart, new Date, Ext.Date.MILLI));
+            console.log('HomeAccounting.store.GroupedTags.datachanged ' + Ext.Date.diff(oStart, new Date, Ext.Date.MILLI));
         }, 100)
     }
 });
