@@ -11,6 +11,7 @@ Ext.define('HomeAccounting.store.GroupedTags', {
     },
     listeners: {
         datachanged: Ext.Function.createBuffered(function(oStore) {
+			var oStart = new Date();
             try {
                 var oTags = Ext.getStore('Tags') || Ext.create('HomeAccounting.store.Tags');
                 oTags.removeAll();
@@ -29,6 +30,7 @@ Ext.define('HomeAccounting.store.GroupedTags', {
                     console.log(e);
                 }
             }
+            console.log('HomeAccounting.store.GroupedTags.datachanged '.Ext.Date.diff(oStart, new Date, Ext.Date.MILLI));
         }, 100)
     }
 });
