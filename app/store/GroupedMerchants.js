@@ -17,16 +17,20 @@ Ext.define('HomeAccounting.store.GroupedMerchants', {
 			var oStart = new Date();
 			try {
 				var oMerchants = Ext.getStore('Merchants') || Ext.create('HomeAccounting.store.Merchants');
-				oMerchants.removeAll();
+					aItems = [];
+
 				oStore.getGroups().each(function(oGroup) {
-					oMerchants.add({
+					aItems.push({
 						name: oGroup.getGroupKey(),
 						total: oGroup.sum('total'),
 						count: oGroup.count(),
 						min: oGroup.min('total'),
 						max: oGroup.max('total')
-					})
+					});
 				});
+
+				oItems.removeAll();
+				oItems.add(aItems);
 			}
 			catch(e) {
 				if(console && console.log) {

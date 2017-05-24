@@ -16,8 +16,6 @@ Ext.define('HomeAccounting.store.GroupedItems', {
 				var oItems = Ext.getStore('Items') || Ext.create('HomeAccounting.store.Items'),
 					aItems = [];
 
-				oItems.removeAll();
-
 				oStore.getGroups().each(function(oGroup) {
 					aItems.push({
 						name: oGroup.getGroupKey(),
@@ -28,6 +26,7 @@ Ext.define('HomeAccounting.store.GroupedItems', {
 					});
 				});
 
+				oItems.removeAll();
 				oItems.add(aItems);
 			}
 			catch(e) {
