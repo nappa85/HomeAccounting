@@ -42,15 +42,18 @@ Ext.define('HomeAccounting.model.Event', {
 
 				//defer EventRows insertions to let the store generate ids
 				Ext.Function.defer(function() {
-					var oEventRows = Ext.getStore('EventRows');
+					var oEventRows = Ext.getStore('EventRows')
+						aEventRows = [],
+						i = 0;
 
 					try {
-
-						for(var i = 0; i < rec.data.rows.length; i++) {
-							oEventRows.add(Ext.apply({
+						for(; i < rec.data.rows.length; i++) {
+							aEventRows.push(Ext.apply({
 								eventId: rec.data.id
 							}, rec.data.rows[i]));
 						}
+
+						oEventRows.add(aEventRows);
 					}
 					catch(e) {
 						if(console && console.log) {

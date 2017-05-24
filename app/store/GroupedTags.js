@@ -14,10 +14,10 @@ Ext.define('HomeAccounting.store.GroupedTags', {
 			var oStart = new Date();
 			try {
 				var oTags = Ext.getStore('Tags') || Ext.create('HomeAccounting.store.Tags');
-					aItems = [];
+					aTags = [];
 
 				oStore.getGroups().each(function(oGroup) {
-					aItems.push({
+					aTags.push({
 						name: oGroup.getGroupKey(),
 						total: oGroup.sum('total'),
 						count: oGroup.count(),
@@ -26,8 +26,8 @@ Ext.define('HomeAccounting.store.GroupedTags', {
 					});
 				});
 
-				oItems.removeAll();
-				oItems.add(aItems);
+				oTags.removeAll();
+				oTags.add(aTags);
 			}
 			catch(e) {
 				if(console && console.log) {
