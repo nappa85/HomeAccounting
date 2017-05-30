@@ -128,7 +128,24 @@ Ext.define('HomeAccounting.view.EditWindow', {
 							valueField: 'name',
 							listeners: {
 								change: function(oField, sValue) {
-									oField.up('gridrow').getRecord().set(oField.getName(), (sValue && sValue.isModel)?sValue.get(oField.getValueField()):sValue);
+									var oGridRow = oField.up('gridrow'),
+										oRecord = oGridRow.getRecord(),
+										sTag = oRecord.get('tag'),
+										sValue = (sValue && sValue.isModel)?sValue.get(oField.getValueField()):sValue;
+
+									oRecord.set('item', sValue);
+
+									//autoselect tag's value if it's unique
+									if(Ext.isEmpty(sTag)) {
+										var aTags = [];
+										Ext.getStore('EventRows').query('item', sValue).each(function(oEventRow) {
+											Ext.Array.include(aTags, oEventRow.get('tag'));
+										});
+
+										if(aTags.length == 1) {
+											oGridRow.down('combobox[name=tag]').setValue(aTags[0]);
+										}
+									}
 								}
 							}
 						}
