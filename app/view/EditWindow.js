@@ -128,8 +128,7 @@ Ext.define('HomeAccounting.view.EditWindow', {
 							valueField: 'name',
 							listeners: {
 								change: function(oField, sValue) {
-									var oGridRow = oField.up('gridrow'),
-										oRecord = oGridRow.getRecord(),
+									var oRecord = oField.up('gridrow').getRecord(),
 										sTag = oRecord.get('tag'),
 										sValue = (sValue && sValue.isModel)?sValue.get(oField.getValueField()):sValue;
 
@@ -143,7 +142,7 @@ Ext.define('HomeAccounting.view.EditWindow', {
 										});
 
 										if(aTags.length == 1) {
-											oGridRow.down('combobox[name=tag]').setValue(aTags[0]);
+											oRecord.set('tag', aTags[0]);
 										}
 									}
 								}
