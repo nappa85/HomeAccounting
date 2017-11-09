@@ -534,12 +534,7 @@
 				"var": "modern/sass/save.scss",
 				"src": "modern/sass/save"
 			}
-		},
-		"requires": [
-			"charts",
-			"google",
-			"font-awesome"
-		]
+		}
         }
     },
 

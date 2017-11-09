@@ -26,7 +26,7 @@ Ext.define('HomeAccounting.Application', {
 		'Merchants',
 		'Tags'
 	],
-
+	
 	launch: function () {
 		Ext.util.Format.currencySign = '€';
 		Ext.util.Format.decimalSeparator = ',';
@@ -44,13 +44,14 @@ Ext.define('HomeAccounting.Application', {
 				Ext.getStore('Events').getProxy().extraParams.access_token = params.access_token;
 				oCalendars.load();
 
-// 				Ext.Viewport.add(Ext.create('HomeAccounting.view.Tabs'));
-// 				Ext.Viewport.add(Ext.create('HomeAccounting.view.EditWindow'));
+				Ext.Viewport.removeAll(true, true);
+				Ext.Viewport.add(Ext.create('HomeAccounting.view.Tabs'));
+				Ext.Viewport.add(Ext.create('HomeAccounting.view.EditWindow'));
 
-// 				Ext.Viewport.setMenu(Ext.create('HomeAccounting.view.SettingsMenu'), {
-// 					side: 'right',
-// 					reveal: true
-// 				});
+				Ext.Viewport.setMenu(Ext.create('HomeAccounting.view.SettingsMenu'), {
+					side: 'right',
+					reveal: true
+				});
 			});
 		});
 	},

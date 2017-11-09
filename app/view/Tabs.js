@@ -2,7 +2,7 @@
 Ext.define('HomeAccounting.view.Tabs', {
 	extend: 'Ext.tab.Panel',
 	alias: 'widget.tabs',
-/*
+
 	requires: [
 		'Ext.chart.CartesianChart',
 		'Ext.chart.axis.Time',
@@ -14,9 +14,10 @@ Ext.define('HomeAccounting.view.Tabs', {
 		'Ext.chart.series.Pie',
 		'Ext.chart.series.sprite.PieSlice',
 		'Ext.chart.interactions.Rotate',
-		'Ext.chart.legend.Legend'
+		'Ext.chart.legend.Legend',
+		'Ext.grid.plugin.SummaryRow'
 	],
-*/
+
 	listeners: {
 		added: function() {
 			this.getTabBar().add({
