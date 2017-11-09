@@ -2,9 +2,9 @@
 Ext.define('HomeAccounting.store.Events', {
 	extend: 'Ext.data.Store',
 
-	requires: [
-		'Ext.google.data.EventsProxy'
-	],
+// 	requires: [
+// 		'Ext.google.data.EventsProxy'
+// 	],
 
 	storeId: 'Events',
 	model: 'HomeAccounting.model.Event',

@@ -1,6 +1,6 @@
 
 Ext.define('HomeAccounting.view.Combobox', {
-	extend: Ext.field.Select,
+	extend: 'Ext.field.Select',
 	alias: 'widget.combobox',
 	config: {
 		autoSelect: false,

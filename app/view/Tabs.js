@@ -2,7 +2,7 @@
 Ext.define('HomeAccounting.view.Tabs', {
 	extend: 'Ext.tab.Panel',
 	alias: 'widget.tabs',
-
+/*
 	requires: [
 		'Ext.chart.CartesianChart',
 		'Ext.chart.axis.Time',
@@ -16,7 +16,7 @@ Ext.define('HomeAccounting.view.Tabs', {
 		'Ext.chart.interactions.Rotate',
 		'Ext.chart.legend.Legend'
 	],
-
+*/
 	listeners: {
 		added: function() {
 			this.getTabBar().add({

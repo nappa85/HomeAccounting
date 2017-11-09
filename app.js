@@ -1,55 +1,26 @@
-
+/*
+ * This file is generated and updated by Sencha Cmd. You can edit this file as
+ * needed for your application, but these edits will have to be merged by
+ * Sencha Cmd when upgrading.
+ */
 Ext.application({
-	models: [
-		'Calendar',
-		'Event',
-		'EventRow',
-		'Generic'
-	],
-	stores: [
-		'Calendars',
-		'EventRows',
-		'Events',
-		'GroupedItems',
-		'GroupedMerchants',
-		'GroupedTags',
-		'Items',
-		'Merchants',
-		'Tags'
-	],
-	views: [
-		'Combobox',
-		'EditWindow',
-		'SettingsMenu',
-		'Tabs'
-	],
 	name: 'HomeAccounting',
 
-	launch: function() {
-		Ext.util.Format.currencySign = '€';
-		Ext.util.Format.decimalSeparator = ',';
-		Ext.util.Format.thousandSeparator = '.';
+	extend: 'HomeAccounting.Application',
 
-		gapi.load('auth', function() {
-			gapi.auth.authorize({
-				'client_id': '137779780771-bl0ae35ftcuvloajal02idrsgnost9i7.apps.googleusercontent.com',
-				'scope': 'https://www.googleapis.com/auth/calendar'
-			}, function() {
-				var params = gapi.auth.getToken(),
-					oCalendars = Ext.getStore('Calendars');
+	requires: [
+		'HomeAccounting.view.Tabs'
+	],
 
-				oCalendars.getProxy().extraParams.access_token = params.access_token;
-				Ext.getStore('Events').getProxy().extraParams.access_token = params.access_token;
-				oCalendars.load();
+	// The name of the initial view to create. With the classic toolkit this class
+	// will gain a "viewport" plugin if it does not extend Ext.Viewport. With the
+	// modern toolkit, the main view will be added to the Viewport.
+	//
+	mainView: 'HomeAccounting.view.Tabs'
 
-				Ext.Viewport.add(Ext.create('HomeAccounting.view.Tabs'));
-				Ext.Viewport.add(Ext.create('HomeAccounting.view.EditWindow'));
-
-				Ext.Viewport.setMenu(Ext.create('HomeAccounting.view.SettingsMenu'), {
-					side: 'right',
-					reveal: true
-				});
-			});
-		});
-	}
+	//-------------------------------------------------------------------------
+	// Most customizations should be made to HomeAccounting.Application. If you need to
+	// customize this file, doing so below this section reduces the likelihood
+	// of merge conflicts when upgrading to new versions of Sencha Cmd.
+	//-------------------------------------------------------------------------
 });
