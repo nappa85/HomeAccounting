@@ -218,11 +218,11 @@ Ext.define('HomeAccounting.view.Tabs', {
 				{
 					type: 'itemhighlight'
 				}
-			],
+			]/*,
 			legend: {
 				xtype: 'legend',
 				docked: 'right'
-			}
+			}*/
 		},
 		{
 			xtype: 'polar',
@@ -256,11 +256,11 @@ Ext.define('HomeAccounting.view.Tabs', {
 				{
 					type: 'itemhighlight'
 				}
-			],
+			]/*,
 			legend: {
 				xtype: 'legend',
 				docked: 'right'
-			}
+			}*/
 		},
 		{
 			xtype: 'polar',
@@ -294,11 +294,11 @@ Ext.define('HomeAccounting.view.Tabs', {
 				{
 					type: 'itemhighlight'
 				}
-			],
+			]/*,
 			legend: {
 				xtype: 'legend',
 				docked: 'right'
-			}
+			}*/
 		}
 	]
 });
